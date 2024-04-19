@@ -2,6 +2,7 @@ packrat/lib*/
 .Rproj.user
 output/
 working/
+data-raw/
 CollegeScorecard_Raw_Data/
 CollegeScorecard_Raw_Data.zip
 .Rhistory

@@ -1,4 +1,5 @@
-DATADIR= ./CollegeScorecard_Raw_Data
+.PHONY : download
+DATADIR= ./data-raw
 
 INFILES := $(sort $(wildcard $(DATADIR)/MERGED*.csv))
 OUTFILES := $(subst $(DATADIR),working,$(INFILES))
@@ -6,13 +7,14 @@ OUTFILES := $(subst $(DATADIR),working,$(INFILES))
 all : output/CollegeScorecard.sqlite
 
 CollegeScorecard_Raw_Data.zip :
-	wget https://s3.amazonaws.com/ed-college-choice-public/CollegeScorecard_Raw_Data.zip
+	wget https://ed-public-download.app.cloud.gov/downloads/CollegeScorecard_Raw_Data_09262023.zip \
+		-O CollegeScorecard_Raw_Data.zip
 
 download : CollegeScorecard_Raw_Data.zip
-	unzip CollegeScorecard_Raw_Data.zip
+	unzip CollegeScorecard_Raw_Data.zip -d data-raw
 	touch $@
 
-working/00header.csv : $(DATADIR)/MERGED1996_PP.csv
+working/00header.csv : $(DATADIR)/MERGED1996_97_PP.csv
 	mkdir -p working
 	printf YEAR, > "$@"
 	# Just grab the first line, and strip off the byte order mark (BOM)
@@ -34,11 +36,7 @@ output/merged.csv : working/00header.csv $(OUTFILES)
 	mkdir -p output
 	cat working/*.csv > output/merged.csv
 
-bootstrap_r :
-	# Ensure packrat has been bootstrapped
-	R --vanilla --slave -f packrat/init.R --args --bootstrap-packrat
-
-output/CollegeScorecard.sqlite : output/merged.csv columns.txt | bootstrap_r
+output/CollegeScorecard.sqlite : output/merged.csv columns.txt
 	rm -f $@
 	Rscript normalize_data.R
 

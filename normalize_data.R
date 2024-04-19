@@ -3,7 +3,7 @@ library(dplyr)
 library(RSQLite)
 
 parseDefns <- function() {
-  dd <- yaml::yaml.load_file("CollegeScorecard_Raw_Data/data_dictionary.yaml")$dictionary
+  dd <- yaml::yaml.load_file("data-raw/data.yaml")$dictionary
   dd <- bind_cols(data.frame(id = names(dd), stringsAsFactors = FALSE), bind_rows(dd))
   dd
 }
@@ -48,10 +48,14 @@ loadMerged <- function(n_max = -1, progress = interactive()) {
     } else {
       switch(record$type,
         autocomplete = "c",
+        long = ,
         float = "n",
+        boolean = "i",
+        "NA" = "c",
         #integer = "i",
         integer = "n", # Lots of columns have floats in supposedly int fields
         {
+          message("colname: ", colname)
           str(record)
           stop("Unexpected record type ", record$type)
         }
@@ -82,12 +86,14 @@ normalized <- function(n_max = -1, progress = interactive()) {
       b <- merged[[datacol[[2]]]]
       ifelse(is.na(a), b, ifelse(is.na(b), a, a | b))
     } else {
-      stop("unexpected arity of calculated field ", datacol)
+      dplyr::coalesce(!!!merged[datacol])
     }
   })
+  # programs.cip_4_digit.unit_id has zero rows??
   data <- c(list(merged$YEAR), data)
   names(data) <- colnames
-  as.data.frame(data, stringsAsFactors = FALSE)
+  keep <- vapply(data, function(x) length(x) > 0, logical(1))
+  as.data.frame(data[keep], stringsAsFactors = FALSE)
 }
 
 latestSchoolNames <- function(normalized_data) {
@@ -121,12 +127,12 @@ writeToSQLite <- function(n_max = -1, progress = interactive()) {
   matched_cols_clean <- sort(unique(unlist(matched_cols)))
   
   dbWriteTable(conn, "data", ndata[, matched_cols_clean])
-  dbGetQuery(conn, 'CREATE INDEX idx_data_id ON data (id);')
-  dbGetQuery(conn, 'CREATE INDEX idx_data_school_name ON data ("school.name");')
+  dbExecute(conn, 'CREATE INDEX idx_data_id ON data (id);')
+  dbExecute(conn, 'CREATE INDEX idx_data_school_name ON data ("school.name");')
   
   dbWriteTable(conn, "schoolnames", latestSchoolNames(ndata))
-  dbGetQuery(conn, 'CREATE INDEX idx_schoolnames_id ON schoolnames (id);')
-  dbGetQuery(conn, 'CREATE INDEX idx_schoolnames_school_name ON schoolnames ("school.name");')
+  dbExecute(conn, 'CREATE INDEX idx_schoolnames_id ON schoolnames (id);')
+  dbExecute(conn, 'CREATE INDEX idx_schoolnames_school_name ON schoolnames ("school.name");')
   
   invisible()
 }
