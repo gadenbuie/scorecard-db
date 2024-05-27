@@ -1,0 +1,34 @@
+Package: scorecard-db
+Title: U.S. College Scorecard Database
+Version: 0.0.0.9000
+Authors@R: c(
+    person("Garrick", "Aden-Buie", , "garrick@adenbuie.com", role = c("cre", "aut")),
+    person("Joe", "Cheng", role = c("aut"))
+  )
+Description: Turn the U.S. College Scorecard data into SQLite database.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.0.0
+URL: https://collegescorecard.ed.gov/data/,
+    https://github.com/jcheng5/scorecard-db
+Depends: 
+    dplyr,
+    fs,
+    glue,
+    targets
+Imports: 
+    arrow,
+    cli,
+    crew,
+    dbplyr,
+    desc,
+    duckdb,
+    janitor,
+    readxl,
+    tarchetypes,
+    tidyr,
+    xml2,
+    zip
+Suggests: 
+    usethis
