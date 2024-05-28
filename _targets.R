@@ -11,7 +11,7 @@ pkg_deps <- pkg_deps[pkg_deps$type == "Depends", ]$package
 tar_option_set(
 	# Packages that your targets need for their tasks
 	packages = setdiff(pkg_deps, "targets"),
-	format = "parquet",
+	format = "rds",
 	controller = crew::crew_controller_local(workers = 4, seconds_idle = 60),
 	NULL
 )
@@ -92,5 +92,12 @@ list(
     out_used_on_site_sqlite(path_data_site_parquet, path_data_full_info, path_data_full_labels),
     format = "file"
   ),
+
+	# Outputs: Tidied ----
+	tar_target("school_tidy", tidy_school(path_data_site_rds)),
+	tar_target("path_data_tidy_school", out_tidy_school(school_tidy), format = "file"),
+	tar_target("scorecard_tidy", tidy_scorecard(path_data_site_rds, school_tidy)),
+	tar_target("path_data_tidy_scorecard", out_tidy_scorecard(scorecard_tidy), format = "file"),
+
 	NULL
 )
