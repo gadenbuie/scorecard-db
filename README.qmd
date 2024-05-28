@@ -1,0 +1,45 @@
+---
+title: College Scorecard Database
+format: gfm
+---
+
+Turn [College Scorecard data](https://collegescorecard.ed.gov/data/) into parquet files, a SQLite database, CSV and RDS (R data storage) files.
+
+License: GPL-3
+
+## Dependencies and Setup
+
+This project uses [renv](https://rstudio.github.io/renv) to manage dependencies. To install the dependencies, run `renv::restore()` in the R console on R 4.4.0.
+
+```r
+renv::restore()
+```
+
+## Instructions
+
+We use [targets](https://docs.ropensci.org/targets/) to manage the data prep pipeline. To download the source data and build all outputs, run the following in the R console:
+
+```r
+targets::tar_make()
+```
+
+### Tidy College Scorecard Tables
+
+The most approachable tables are the `school_tidy` and `scorecard_tidy` targets.
+
+```{r}
+school_tidy <- targets::tar_read("school_tidy")
+skimr::skim_tee(school_tidy)
+```
+
+```{r}
+scorecard_tidy <- targets::tar_read("scorecard_tidy")
+skimr::skim_tee(scorecard_tidy)
+```
+
+For ease of use, the variables in `school_tidy` and `scorecard_tidy` have been renamed from the original names. I don't yet have a mapping back to the original names, but you can reference the `data_dictionary` target to see information about the original names.
+
+```{r}
+data_dictionary <- targets::tar_read("data_dictionary")
+head(data_dictionary$info, 10)
+```
