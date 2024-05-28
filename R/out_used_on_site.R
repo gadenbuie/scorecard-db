@@ -1,7 +1,8 @@
 out_used_on_site_parquet <- function(
   data_dictionary = tar_read("data_dictionary"),
   path_data_full_merged = tar_read("path_data_full_merged"),
-  output_file = "data/site/scorecard_used_on_site.parquet"
+  output_file = "data/site/scorecard_used_on_site.parquet",
+  keep_extra = c("ZIP", "LATITUDE", "LONGITUDE", "C100_4")
 ) {
   dir_create(path_dir(output_file))
   merged <- tbl_merged(path_data_full_merged)
@@ -9,8 +10,9 @@ out_used_on_site_parquet <- function(
   keep <-
     data_dictionary$info |>
       dplyr::filter(shown_use_on_site == "Yes") |>
-        dplyr::pull(variable_name) |>
-          paste(collapse = ", ")
+        dplyr::pull(variable_name)
+      
+  keep <- paste(c(keep, keep_extra), collapse = ", ")
         
   con <- global_duckdb()
   DBI::dbExecute(con, glue(
