@@ -9,11 +9,11 @@ pkg_deps <- pkg_deps[pkg_deps$type == "Depends", ]$package
 
 # ---- Targets Options ----
 tar_option_set(
-	# Packages that your targets need for their tasks
-	packages = setdiff(pkg_deps, "targets"),
-	format = "rds",
-	controller = crew::crew_controller_local(workers = 4, seconds_idle = 60),
-	NULL
+  # Packages that your targets need for their tasks
+  packages = setdiff(pkg_deps, "targets"),
+  format = "rds",
+  controller = crew::crew_controller_local(workers = 4, seconds_idle = 60),
+  NULL
 )
 
 # Run the R scripts in the R/ folder with your custom functions:
@@ -22,55 +22,55 @@ tar_source()
 # Build Targets ----------------------------------------------------------------
 list(
   # Data download ----
-	tar_url("url_data_zip", cs_url_data_zip()),
-	tar_target(
-		"path_data_zip",
-		cs_data_raw_download(url_data_zip, "data-raw"),
-		format = "file"
-	),
-	tar_target(
-		"path_data_raw",
-		cs_data_raw_extract(path_data_zip),
-		format = "file"
-	),
-	tar_target(
-		"path_data_raw_merged",
-		cs_data_raw_ls_merged(path_data_raw),
-		format = "file"
-	),
-	tar_target(
-		"path_data_raw_yaml",
-		cs_data_raw_ls_yaml(path_data_raw),
-		format = "file"
-	),
-	tar_target(
-		"path_data_raw_dictionary",
-		cs_data_raw_ls_dictionary(path_data_raw),
-		format = "file"
-	),
+  tar_url("url_data_zip", cs_url_data_zip()),
+  tar_target(
+    "path_data_zip",
+    cs_data_raw_download(url_data_zip, "data-raw"),
+    format = "file"
+  ),
+  tar_target(
+    "path_data_raw",
+    cs_data_raw_extract(path_data_zip),
+    format = "file"
+  ),
+  tar_target(
+    "path_data_raw_merged",
+    cs_data_raw_ls_merged(path_data_raw),
+    format = "file"
+  ),
+  tar_target(
+    "path_data_raw_yaml",
+    cs_data_raw_ls_yaml(path_data_raw),
+    format = "file"
+  ),
+  tar_target(
+    "path_data_raw_dictionary",
+    cs_data_raw_ls_dictionary(path_data_raw),
+    format = "file"
+  ),
   # Data sets ----
-	tar_target(
-		"data_dictionary",
-		dd_read_institution(path_data_raw_dictionary),
-		format = "rds"
-	),
+  tar_target(
+    "data_dictionary",
+    dd_read_institution(path_data_raw_dictionary),
+    format = "rds"
+  ),
   # Outputs ----
   # Outputs: Full ---
-	tar_target(
-		"path_data_full_merged",
-		out_full_merged_parquet(path_data_raw_merged, data_dictionary),
-		format = "file"
-	),
-	tar_target(
-		"path_data_full_info",
-		out_full_info_parquet(data_dictionary),
-		format = "file"
-	),
-	tar_target(
-		"path_data_full_labels",
-		out_full_labels_parquet(data_dictionary),
-		format = "file"
-	),
+  tar_target(
+    "path_data_full_merged",
+    out_full_merged_parquet(path_data_raw_merged, data_dictionary),
+    format = "file"
+  ),
+  tar_target(
+    "path_data_full_info",
+    out_full_info_parquet(data_dictionary),
+    format = "file"
+  ),
+  tar_target(
+    "path_data_full_labels",
+    out_full_labels_parquet(data_dictionary),
+    format = "file"
+  ),
   # Outputs: Used on site ----
   tar_target(
     "path_data_site_parquet",
@@ -93,11 +93,11 @@ list(
     format = "file"
   ),
 
-	# Outputs: Tidied ----
-	tar_target("school_tidy", tidy_school(path_data_site_rds)),
-	tar_target("path_data_tidy_school", out_tidy_school(school_tidy), format = "file"),
-	tar_target("scorecard_tidy", tidy_scorecard(path_data_site_rds, school_tidy)),
-	tar_target("path_data_tidy_scorecard", out_tidy_scorecard(scorecard_tidy), format = "file"),
+  # Outputs: Tidied ----
+  tar_target("school_tidy", tidy_school(path_data_site_rds)),
+  tar_target("path_data_tidy_school", out_tidy_school(school_tidy), format = "file"),
+  tar_target("scorecard_tidy", tidy_scorecard(path_data_site_rds, school_tidy)),
+  tar_target("path_data_tidy_scorecard", out_tidy_scorecard(scorecard_tidy), format = "file"),
 
-	NULL
+  NULL
 )
