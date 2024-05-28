@@ -73,7 +73,8 @@ out_used_on_site_csv <- function(
 out_used_on_site_rds <- function(
   data_dictionary = tar_read("data_dictionary"),
   path_data_full_merged = tar_read("path_data_full_merged"),
-  output_file = "data/site/scorecard_used_on_site.rds"
+  output_file = "data/site/scorecard_used_on_site.rds",
+  keep_extra = c("ZIP", "LATITUDE", "LONGITUDE", "C100_4")
 ) {
   dir_create(path_dir(output_file))
 
@@ -87,7 +88,7 @@ out_used_on_site_rds <- function(
     info |>
     dplyr::filter(
       shown_use_on_site == "Yes" |
-      variable_name %in% c("ZIP", "LATITUDE", "LONGITUDE")
+      variable_name %in% !!keep_extra
     ) |>
     dplyr::pull(variable_name)
         
