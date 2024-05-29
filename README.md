@@ -27,6 +27,21 @@ the following in the R console:
 targets::tar_make()
 ```
 
+### Raw College Scorecard Data
+
+The raw College Scorecard data is available as a set of parquet files in
+`data/parquet`. The complete scorecard dataset is stored as a set of
+parquet files in `data/parquet/merged`. Two informational tables contain
+the data dictionary (`data/parquet/dd_info.parquet`) and the variable
+labels (`data/parquet/dd_labels.parquet`) for categorical variables in
+the scorecard dataset.
+
+``` r
+scorecard <- targets::tar_read("path_data_full_merged") |> arrow::read_dataset()
+dd_info   <- targets::tar_read("path_data_full_info")   |> arrow::read_parquet()
+dd_labels <- targets::tar_read("path_data_full_labels") |> arrow::read_parquet()
+```
+
 ### Tidy College Scorecard Tables
 
 The most approachable tables are the `school_tidy` and `scorecard_tidy`
