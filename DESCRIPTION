@@ -6,7 +6,7 @@ Authors@R: c(
     person("Joe", "Cheng", role = c("aut"))
   )
 Description: Turn the U.S. College Scorecard data into SQLite database.
-License: GPL (>= 3)
+License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.0.0

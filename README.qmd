@@ -5,7 +5,7 @@ format: gfm
 
 Turn [College Scorecard data](https://collegescorecard.ed.gov/data/) into parquet files, a SQLite database, CSV and RDS (R data storage) files.
 
-License: GPL-3
+The code in this repository is licensed under [the MIT License](https://mit-license.org/). The data files are in the public domain.
 
 ## Dependencies and Setup
 
