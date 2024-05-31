@@ -1,0 +1,17 @@
+Package: collegeScorecard
+Title: U.S. College Scorecard Data
+Version: 0.0.1
+Authors@R: 
+    person("Garrick", "Aden-Buie", , "garrick@adenbuie.com", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0002-7111-0077"))
+Description: The US College Scorecard dataset provides information on
+    institutional characteristics, enrollment, student aid, costs, and
+    student outcomes.
+License: MIT + file LICENSE
+URL: https://github.com/gadenbuie/scorecard-db
+BugReports: https://github.com/gadenbuie/scorecard-db/issues
+Imports: 
+    zeallot
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.1

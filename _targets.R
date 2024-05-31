@@ -95,9 +95,20 @@ list(
 
   # Outputs: Tidied ----
   tar_target("school_tidy", tidy_school(path_data_site_rds)),
-  tar_target("path_data_tidy_school", out_tidy_school(school_tidy), format = "file"),
   tar_target("scorecard_tidy", tidy_scorecard(path_data_site_rds, school_tidy)),
+  tar_target("path_data_tidy_school", out_tidy_school(school_tidy), format = "file"),
   tar_target("path_data_tidy_scorecard", out_tidy_scorecard(scorecard_tidy), format = "file"),
+
+  tar_target(
+    "path_data_pkg_school",
+    out_tidy_school(school_tidy, "pkg/inst/scorecard-tidy/school.rds"),
+    format = "file"
+  ),
+  tar_target(
+    "path_data_pkg_scorecard",
+    out_tidy_scorecard(scorecard_tidy, "pkg/inst/scorecard-tidy/scorecard.rds"),
+    format = "file"
+  ),
 
   NULL
 )
