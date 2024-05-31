@@ -1,6 +1,6 @@
 name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
 .globals|object|116287f287444c70|||||||||||||||
-.Random.seed|object|5982d516042a2368|||||||||||||||
+.Random.seed|object|99bcc6985b5a8bb1|||||||||||||||
 cs_data_dictionary_info_to_parquet|function|60cb6db46577e4bd|||||||||||||||
 cs_data_dictionary_labels_to_parquet|function|2932b8b421d24490|||||||||||||||
 cs_data_download|function|6c5749e1aed2e93b|||||||||||||||
@@ -42,7 +42,7 @@ path_data_full_info|stem|2ba786c0ae012d27|d14780559029070d|60e5641a29965029|1028
 path_data_full_labels|stem|d25a416430095279|17d3912c0db30450|b0cc3d95d76e887f|-646719716|data/parquet/dd_labels.parquet|t19869.5084574787s|0769a1509a150a8b|4785|file|local|vector|||0.046||
 path_data_full_merged|stem|dc8c0d6db41df2b2|87941e74f805a63c|4d9006467fe13709|1007750981|data/parquet/merged|t19870.7789760334s|7d2439bdc4e9a0ed|928|file|local|vector|||108.543||
 path_data_pkg_school|stem|3d1bae7a7f956478|375185a7f4ed979b|aa9a8d699ae52c6f|1541609634|pkg/inst/scorecard-tidy/school.rds|t19874.4974484309s|630d94f6964cd092|2663832|file|local|vector|||0.186||
-path_data_pkg_scorecard|stem|33d15001eec022b5|d60b8248a2cfc879|96bd2792545f386e|-434225160|pkg/inst/scorecard-tidy/scorecard.rds|t19874.4974468607s|1ff2f61f765f195d|32079546|file|local|vector|||0.218||
+path_data_pkg_scorecard|stem|a6894dbe9241e643|d60b8248a2cfc879|b80068606c7a4a14|-434225160|pkg/inst/scorecard-tidy/scorecard.rds|t19874.5795303837s|d029e9cfb84fe43d|32079547|file|local|vector|||0.053||
 path_data_raw|stem|298bd209ceb69026|3d3dba63cadb30aa|262bc88e79b6872c|-164410244|data-raw/college-scorecard-raw|t19867.8500808397s|abcd9a67c43bfb24|1248|file|local|vector|||12.945||
 path_data_raw_dictionary|stem|b0b252607ab911d1|6ec1fdeb902c7f47|a49653e91830d4a4|547851235|data-raw/college-scorecard-raw/CollegeScorecardDataDictionary.xlsx|t19808.6184953704s|32671f3eb1c8e4c3|739706|file|local|vector|||0.026||
 path_data_raw_merged|stem|bd012fc18c781b05|f3ef5bec59fa5968|fa14feaa3314a778|1479081353|data-raw/college-scorecard-raw/MERGED1996_97_PP.csv*data-raw/college-scorecard-raw/MERGED1997_98_PP.csv*data-raw/college-scorecard-raw/MERGED1998_99_PP.csv*data-raw/college-scorecard-raw/MERGED1999_00_PP.csv*data-raw/college-scorecard-raw/MERGED2000_01_PP.csv*data-raw/college-scorecard-raw/MERGED2001_02_PP.csv*data-raw/college-scorecard-raw/MERGED2002_03_PP.csv*data-raw/college-scorecard-raw/MERGED2003_04_PP.csv*data-raw/college-scorecard-raw/MERGED2004_05_PP.csv*data-raw/college-scorecard-raw/MERGED2005_06_PP.csv*data-raw/college-scorecard-raw/MERGED2006_07_PP.csv*data-raw/college-scorecard-raw/MERGED2007_08_PP.csv*data-raw/college-scorecard-raw/MERGED2008_09_PP.csv*data-raw/college-scorecard-raw/MERGED2009_10_PP.csv*data-raw/college-scorecard-raw/MERGED2010_11_PP.csv*data-raw/college-scorecard-raw/MERGED2011_12_PP.csv*data-raw/college-scorecard-raw/MERGED2012_13_PP.csv*data-raw/college-scorecard-raw/MERGED2013_14_PP.csv*data-raw/college-scorecard-raw/MERGED2014_15_PP.csv*data-raw/college-scorecard-raw/MERGED2015_16_PP.csv*data-raw/college-scorecard-raw/MERGED2016_17_PP.csv*data-raw/college-scorecard-raw/MERGED2017_18_PP.csv*data-raw/college-scorecard-raw/MERGED2018_19_PP.csv*data-raw/college-scorecard-raw/MERGED2019_20_PP.csv*data-raw/college-scorecard-raw/MERGED2020_21_PP.csv*data-raw/college-scorecard-raw/MERGED2021_22_PP.csv*data-raw/college-scorecard-raw/MERGED2022_23_PP.csv|t19804.7163425926s|bd3539da32bc2c0f|2236495767|file|local|vector|||0||
@@ -52,17 +52,17 @@ path_data_site_parquet|stem|05e81f731f634909|72f99707cdb92d70|5239cfdeb8b574d1|-
 path_data_site_rds|stem|8e79aedcb9055d73|b2e01096d01ece4b|299d5fb98c842622|-2025288741|data/site/scorecard_used_on_site.rds|t19871.8132411699s|3f5b6d473e9fcb00|14434233|file|local|vector|||37.156||
 path_data_site_sqlite|stem|ed4a1a9a8a66ba65|f423897938d34a9a|48f44d3a8be1a8ad|1908068269|data/site/scorecard_used_on_site.db|t19871.8567697602s|5aa0ba87f056373f|73007104|file|local|vector|||1.458||
 path_data_tidy_school|stem|3d1bae7a7f956478|e90324671d465829|aa9a8d699ae52c6f|1885761809|data/tidy/school.rds|t19871.850010588s|630d94f6964cd092|2663832|file|local|vector|||0.155||
-path_data_tidy_scorecard|stem|33d15001eec022b5|e8dded240a3586c7|96bd2792545f386e|1476911287|data/tidy/scorecard.rds|t19871.8534121547s|1ff2f61f765f195d|32079546|file|local|vector|||0.05||
+path_data_tidy_scorecard|stem|a6894dbe9241e643|e8dded240a3586c7|b80068606c7a4a14|1476911287|data/tidy/scorecard.rds|t19874.5795318094s|d029e9cfb84fe43d|32079547|file|local|vector|||0.059||
 path_data_zip|stem|2f3f3291b4481b77|1320cb850aa199d4|0a73a6e0da471537|-107127517|data-raw/College_Scorecard_Raw_Data_04082024.zip|t19867.8498069192s|de9e51f5523ef5b3|396905951|file|local|vector|||44.111||
 pkg_deps|object|ca465f1069698a39|||||||||||||||
 school_tidy|stem|a5ae9106d0ca7176|fc305e52b39bcf54|9f4e0bc4caabef6a|366396326||t19871.8527227998s|51075691d54b4072|452629|rds|local|vector|||1.562||
-scorecard_tidy|stem|b0969d7d0b99cd6e|fcf7ac32379ff230|189bf1d3fcb21ac6|1107603213||t19871.8534093641s|fcb184a18fd1d2cc|3030396|rds|local|vector|||1.287||
+scorecard_tidy|stem|915194c41af2a03e|fcf7ac32379ff230|7992393136fde142|1107603213||t19874.5795272091s|42fc9a4510fff5d3|3030395|rds|local|vector|||1.351||
 tbl_info|function|94ff84d7f33be65c|||||||||||||||
 tbl_labels|function|2fb0eb4b569e0361|||||||||||||||
 tbl_merged|function|98a34117ffdef324|||||||||||||||
 tidy_school|function|f20a6921a6faa0c7|||||||||||||||
 tidy_school_vars|function|06f59ddeac77c906|||||||||||||||
-tidy_scorecard|function|cdd1479b1c787111|||||||||||||||
+tidy_scorecard|function|be0a747586388a5c|||||||||||||||
 uncap|function|e8a1f56798ac22d5|||||||||||||||
 URL_COLLEGE_SCORECARD|object|e49ea303856f3cd3|||||||||||||||
 url_data_zip|stem|f1c323dd1c943388|451ec22350b98cf2|77a082c44d277037|914123680|https://ed-public-download.app.cloud.gov/downloads/College_Scorecard_Raw_Data_04082024.zip|t19865.8675815459s||0|url|local|vector|||0.57||

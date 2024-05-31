@@ -131,7 +131,7 @@ tidy_scorecard <- function(
 
 			# Earnings ----
 			# Median earnings of students working and not enrolled 10 years after entry
-			amt_earnings_med_10y = earnings_md_earn_wne_p10,
+			amnt_earnings_med_10y = earnings_md_earn_wne_p10,
 			# Median earnings of students working and not enrolled 10 years after entry
 			amnt_earnings_med_10y_similar = earnings_mdearn_pd,
 			# Overall median earnings of students working and not enrolled 10 years after entry
