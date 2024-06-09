@@ -27,6 +27,7 @@ tidy_school <- function(path_data_site_rds = tar_read("path_data_site_rds")) {
 			regex = "(\\w+): (\\w+) .+"
 		) |>
 		mutate(
+	    across(unitid, as.integer),
 	    locale_type = factor(locale_type, c("City", "Suburb", "Town", "Rural")),
 			locale_size = factor(locale_size, c("Large", "Midsize", "Small", "Fringe", "Distant", "Remote")),
 			control = recode(
@@ -123,9 +124,9 @@ tidy_scorecard <- function(
 		# Keep only Title IV participating schools
 		semi_join(school_tidy, by = join_by(unitid == id)) |>
 		transmute(
-			id = unitid,
+			id = as.integer(unitid),
 			academic_year,
-			n_undergrads = student_ugds,
+			n_undergrads = as.integer(student_ugds),
 
 			# Cost ----
 			cost_avg = coalesce(cost_npt4_priv, cost_npt4_pub),
