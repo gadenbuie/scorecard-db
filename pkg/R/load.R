@@ -26,8 +26,8 @@ NULL
 #' @export
 college_load_tidy_all <- function() {
   list(
-    scorecard = ,
-    school = readRDS(path_pkg("scorecard-tidy", "school.rds"))
+    scorecard = college_load_tidy_scorecard(),
+    school = college_load_tidy_school()
   )
 }
 
