@@ -25,6 +25,7 @@ Imports:
     desc,
     duckdb,
     janitor,
+    readr,
     readxl,
     skimr,
     tarchetypes,
