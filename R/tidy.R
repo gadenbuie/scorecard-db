@@ -141,18 +141,20 @@ tidy_scorecard <- function(
 			# Earnings ----
 			# Median earnings of students working and not enrolled 10 years after entry
 			amnt_earnings_med_10y = earnings_md_earn_wne_p10,
-			# Median earnings of students working and not enrolled 10 years after entry
-			amnt_earnings_med_10y_similar = earnings_mdearn_pd,
-			# Overall median earnings of students working and not enrolled 10 years after entry
-			amnt_earnings_med_10y_overall = earnings_mdearn_all,
+			## These columns appear to be completely missing across all academic years
+			# # Median earnings of students working and not enrolled 10 years after entry
+			# amnt_earnings_med_10y_similar = earnings_mdearn_pd,
+			# # Overall median earnings of students working and not enrolled 10 years after entry
+			# amnt_earnings_med_10y_overall = earnings_mdearn_all,
 
 			# Completion ----
 			# Completion rate for first-time, full-time students at four-year institutions (100% of expected time to completion)
 			rate_completion = completion_c100_4,
-			# Median completion rate amongst insitutions with the same predominant degree category
-			rate_completion_med_similar = completion_mdcomp_pd,
-			# Overall median of completion rate
-			rate_completion_med_overall = completion_mdcomp_all,
+			## These columns appear to be completely missing across all academic years
+			# # Median completion rate amongst insitutions with the same predominant degree category
+			# rate_completion_med_similar = completion_mdcomp_pd,
+			# # Overall median of completion rate
+			# rate_completion_med_overall = completion_mdcomp_all,
 
 			# Admissions ----
 			rate_admissions = admissions_adm_rate_supp,
