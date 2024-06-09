@@ -1,6 +1,6 @@
 name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
 .globals|object|116287f287444c70|||||||||||||||
-.Random.seed|object|b50c3b36f8a2e1e4|||||||||||||||
+.Random.seed|object|21c087c5f5c6c64b|||||||||||||||
 cs_data_dictionary_info_to_parquet|function|60cb6db46577e4bd|||||||||||||||
 cs_data_dictionary_labels_to_parquet|function|2932b8b421d24490|||||||||||||||
 cs_data_download|function|6c5749e1aed2e93b|||||||||||||||
@@ -41,7 +41,7 @@ out_used_on_site_sqlite|function|c4cdbf515f403a92|||||||||||||||
 path_data_full_info|stem|2ba786c0ae012d27|d14780559029070d|60e5641a29965029|1028619060|data/parquet/dd_info.parquet|t19879.7796251253s|5947c0c1de64a1c3|54229|file|local|vector|||0.26||
 path_data_full_labels|stem|d25a416430095279|17d3912c0db30450|b0cc3d95d76e887f|-646719716|data/parquet/dd_labels.parquet|t19879.7796251265s|0769a1509a150a8b|4785|file|local|vector|||0.046||
 path_data_full_merged|stem|dc8c0d6db41df2b2|87941e74f805a63c|4d9006467fe13709|1007750981|data/parquet/merged|t19879.7796316s|7d2439bdc4e9a0ed|928|file|local|vector|||108.543||
-path_data_pkg_school|stem|a134a083614705d5|375185a7f4ed979b|e9df70e152dd7c82|1541609634|pkg/inst/scorecard-tidy/school.rds|t19883.6358313402s|d5ef83834d7b8726|2513138|file|local|vector|||0.015||
+path_data_pkg_school|stem|7b33320ff3c2c1d4|375185a7f4ed979b|2eb366d927608ca4|1541609634|pkg/inst/scorecard-tidy/school.rds|t19883.65387039s|7548b9121154c2ab|2226462|file|local|vector|||0.013||
 path_data_pkg_scorecard|stem|a6894dbe9241e643|d60b8248a2cfc879|b80068606c7a4a14|-434225160|pkg/inst/scorecard-tidy/scorecard.rds|t19879.7796328337s|d029e9cfb84fe43d|32079547|file|local|vector|||0.053||
 path_data_raw|stem|298bd209ceb69026|3d3dba63cadb30aa|262bc88e79b6872c|-164410244|data-raw/college-scorecard-raw|t19883.6237516717s|abcd9a67c43bfb24|1248|file|local|vector|||11.182||
 path_data_raw_dictionary|stem|b0b252607ab911d1|6ec1fdeb902c7f47|a49653e91830d4a4|547851235|data-raw/college-scorecard-raw/CollegeScorecardDataDictionary.xlsx|t19808.6184953704s|32671f3eb1c8e4c3|739706|file|local|vector|||0.026||
@@ -51,16 +51,16 @@ path_data_site_csv|stem|af545b4c62bdf8c4|7781fe6a395dfb1e|4d24bbd7fb15dce2|36603
 path_data_site_parquet|stem|05e81f731f634909|72f99707cdb92d70|5239cfdeb8b574d1|-1463404068|data/site/scorecard_used_on_site.parquet|t19879.7796317938s|b3aa3474d72e7070|8010445|file|local|vector|||25.078||
 path_data_site_rds|stem|8e79aedcb9055d73|b2e01096d01ece4b|299d5fb98c842622|-2025288741|data/site/scorecard_used_on_site.rds|t19879.7796321102s|3f5b6d473e9fcb00|14434233|file|local|vector|||37.156||
 path_data_site_sqlite|stem|ed4a1a9a8a66ba65|f423897938d34a9a|48f44d3a8be1a8ad|1908068269|data/site/scorecard_used_on_site.db|t19883.6265547173s|5aa0ba87f056373f|73007104|file|local|vector|||2.344||
-path_data_tidy_school|stem|a134a083614705d5|e90324671d465829|e9df70e152dd7c82|1885761809|data/tidy/school.rds|t19883.6358305479s|d5ef83834d7b8726|2513138|file|local|vector|||0.01||
+path_data_tidy_school|stem|7b33320ff3c2c1d4|e90324671d465829|2eb366d927608ca4|1885761809|data/tidy/school.rds|t19883.6538694506s|7548b9121154c2ab|2226462|file|local|vector|||0.009||
 path_data_tidy_scorecard|stem|a6894dbe9241e643|e8dded240a3586c7|b80068606c7a4a14|1476911287|data/tidy/scorecard.rds|t19879.7796324661s|d029e9cfb84fe43d|32079547|file|local|vector|||0.059||
 path_data_zip|stem|2f3f3291b4481b77|1320cb850aa199d4|0a73a6e0da471537|-107127517|data-raw/College_Scorecard_Raw_Data_04082024.zip|t19883.6236217893s|de9e51f5523ef5b3|396905951|file|local|vector|||37.513||
 pkg_deps|object|ca465f1069698a39|||||||||||||||
-school_tidy|stem|0f0a218dab8e9fe4|fc305e52b39bcf54|9e74e266a4f73398|366396326||t19883.6358196063s|f74376290e207a67|451122|rds|local|vector|||1.613||
-scorecard_tidy|stem|915194c41af2a03e|fcf7ac32379ff230|c10275c7fbd94db8|1107603213||t19883.6358399437s|42fc9a4510fff5d3|3030395|rds|local|vector|||0.744||
+school_tidy|stem|55aa9982d1a09d9c|fc305e52b39bcf54|b503148e7f435ae7|366396326||t19883.6538562589s|6390af8e948aa0aa|447548|rds|local|vector|||1.532||
+scorecard_tidy|stem|915194c41af2a03e|fcf7ac32379ff230|98c809bd8c714222|1107603213||t19883.6538791904s|42fc9a4510fff5d3|3030395|rds|local|vector|||0.878||
 tbl_info|function|94ff84d7f33be65c|||||||||||||||
 tbl_labels|function|2fb0eb4b569e0361|||||||||||||||
 tbl_merged|function|98a34117ffdef324|||||||||||||||
-tidy_school|function|495e226293b04767|||||||||||||||
+tidy_school|function|e283d8c6f54b9268|||||||||||||||
 tidy_school_vars|function|06f59ddeac77c906|||||||||||||||
 tidy_scorecard|function|be0a747586388a5c|||||||||||||||
 uncap|function|e8a1f56798ac22d5|||||||||||||||

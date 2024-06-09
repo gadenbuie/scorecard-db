@@ -14,6 +14,8 @@ tidy_school <- function(path_data_site_rds = tar_read("path_data_site_rds")) {
 	scorecard_site <- readr::read_rds(path_data_site_rds)
 	school_vars <- tidy_school_vars(scorecard_site)
 
+  degrees <- c("Certificate", "Associate", "Bachelor", "Graduate")
+
 	school <-
 		scorecard_site |>
 		slice_max(academic_year, n = 1, by = unitid) |>
@@ -44,6 +46,10 @@ tidy_school <- function(path_data_site_rds = tar_read("path_data_site_rds")) {
 				grepl("Associate", highdeg) ~ "Associate",
 				grepl("Bachelor", highdeg) ~ "Bachelor",
 				grepl("Graduate", highdeg) ~ "Graduate",
+			),
+			across(
+				c(preddeg, highdeg),
+				\(x) factor(x, levels = degrees)
 			),
 			insturl = if_else(
 				!is.na(insturl) & !grepl("^http", insturl),
