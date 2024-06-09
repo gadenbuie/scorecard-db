@@ -101,12 +101,20 @@ list(
 
   tar_target(
     "path_data_pkg_school",
-    out_tidy_school(school_tidy, "pkg/inst/scorecard-tidy/school.rds"),
+    usethis::with_project("pkg", {
+      school <- school_tidy
+      usethis::use_data(school, overwrite = TRUE)
+      "pkg/data/school.rda"
+    }),
     format = "file"
   ),
   tar_target(
     "path_data_pkg_scorecard",
-    out_tidy_scorecard(scorecard_tidy, "pkg/inst/scorecard-tidy/scorecard.rds"),
+    usethis::with_project("pkg", {
+      scorecard <- scorecard_tidy
+      usethis::use_data(scorecard, overwrite = TRUE)
+      "pkg/data/scorecard.rda"
+    }),
     format = "file"
   ),
 

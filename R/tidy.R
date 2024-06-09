@@ -156,10 +156,13 @@ tidy_scorecard <- function(
 			# Admissions ----
 			rate_admissions = admissions_adm_rate_supp,
 			score_act_p25 = admissions_actcm25, # 25th percentile of the ACT cumulative score
+			score_act_p50 = admissions_actcm50, # 50th percentile of the ACT cumulative score
 			score_act_p75 = admissions_actcm75, # 75th percentile of the ACT cumulative score
 			score_sat_verbal_p25 = admissions_satvr25, # 25th percentile of SAT scores at the institution (critical reading)
+			score_sat_verbal_p50 = admissions_satvr50, # 50th percentile of SAT scores at the institution (critical reading)
 			score_sat_verbal_p75 = admissions_satvr75, # 75th percentile of SAT scores at the institution (critical reading)
 			score_sat_math_p25 = admissions_satmt25, # 25th percentile of SAT scores at the institution (math)
+			score_sat_math_p50 = admissions_satmt50, # 50th percentile of SAT scores at the institution (math)
 			score_sat_math_p75 = admissions_satmt75, # 75th percentile of SAT scores at the institution (math)
 		)
 }

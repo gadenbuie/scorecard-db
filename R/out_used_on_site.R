@@ -1,8 +1,10 @@
+site_extra_vars <- c("ZIP", "LATITUDE", "LONGITUDE", "C100_4", "ACTCM50", "SATVR50", "SATMT50")
+
 out_used_on_site_parquet <- function(
 	data_dictionary = tar_read("data_dictionary"),
 	path_data_full_merged = tar_read("path_data_full_merged"),
 	output_file = "data/site/scorecard_used_on_site.parquet",
-	keep_extra = c("ZIP", "LATITUDE", "LONGITUDE", "C100_4")
+	keep_extra = site_extra_vars
 ) {
 	dir_create(path_dir(output_file))
 	merged <- tbl_merged(path_data_full_merged)
@@ -82,7 +84,7 @@ out_used_on_site_rds <- function(
 	data_dictionary = tar_read("data_dictionary"),
 	path_data_full_merged = tar_read("path_data_full_merged"),
 	output_file = "data/site/scorecard_used_on_site.rds",
-	keep_extra = c("ZIP", "LATITUDE", "LONGITUDE", "C100_4")
+	keep_extra = site_extra_vars
 ) {
 	dir_create(path_dir(output_file))
 
