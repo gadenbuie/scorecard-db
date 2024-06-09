@@ -25,6 +25,8 @@ tidy_school <- function(path_data_site_rds = tar_read("path_data_site_rds")) {
 			regex = "(\\w+): (\\w+) .+"
 		) |>
 		mutate(
+	    locale_type = factor(locale_type, c("City", "Suburb", "Town", "Rural")),
+			locale_size = factor(locale_size, c("Large", "Midsize", "Small", "Fringe", "Distant", "Remote")),
 			control = recode(
 				control,
 				"Public" = "Public",
