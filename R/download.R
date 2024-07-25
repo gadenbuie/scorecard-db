@@ -10,6 +10,8 @@ cs_url_data_zip <- function() {
 
 cs_data_raw_download <- function(url, output_dir = "data-raw") {
 	dir_create(output_dir)
+	# The download can be very very slow, so timeout at 10 minutes instead of 1
+	withr::local_options(list(timeout = 60 * 10))
 
 	file <- path(output_dir, path_file(url))
 	download.file(url, destfile = file)
