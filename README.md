@@ -5,13 +5,15 @@ Turn [College Scorecard data](https://collegescorecard.ed.gov/data/)
 into parquet files, a SQLite database, CSV and RDS (R data storage)
 files.
 
-License: GPL-3
+The code in this repository is licensed under [the MIT
+License](https://mit-license.org/). The data files are in the public
+domain.
 
 ## Dependencies and Setup
 
 This project uses [renv](https://rstudio.github.io/renv) to manage
 dependencies. To install the dependencies, run `renv::restore()` in the
-R console on R 4.4.0.
+R console on R 4.4.1.
 
 ``` r
 renv::restore()
@@ -26,6 +28,10 @@ the following in the R console:
 ``` r
 targets::tar_make()
 ```
+
+To update the data, invalidate the `url_data_zip` target –
+`targets::tar_invalidate("url_data_zip")` – and run
+`targets::tar_make()` again.
 
 ### Raw College Scorecard Data
 
@@ -59,34 +65,38 @@ skimr::skim_tee(school_tidy)
     Number of columns          25    
     _______________________          
     Column type frequency:           
-      character                9     
-      factor                   3     
+      character                5     
+      factor                   7     
       logical                  10    
       numeric                  3     
     ________________________         
     Group variables            None  
 
     ── Variable type: character ────────────────────────────────────────────────────
-      skim_variable   n_missing complete_rate min max empty n_unique whitespace
-    1 name                    0         1       3  93     0    10525          0
-    2 city                    0         1       3  23     0     2915          0
-    3 state                   0         1       2   2     0       59          0
-    4 zip                     0         1       5  10     0     8757          0
-    5 url                  4943         0.563  15 123     0     5435          0
-    6 deg_predominant       998         0.912   8  11     0        4          0
-    7 deg_highest          1193         0.894   8  11     0        4          0
-    8 locale_type          5415         0.521   4   6     0        4          0
-    9 locale_size          5415         0.521   5   7     0        6          0
+      skim_variable n_missing complete_rate min max empty n_unique whitespace
+    1 name                  0         1       3  93     0    10525          0
+    2 city                  0         1       3  23     0     2915          0
+    3 state                 0         1       2   2     0       59          0
+    4 zip                   0         1       5  10     0     8757          0
+    5 url                4943         0.563  15 123     0     5435          0
 
     ── Variable type: factor ───────────────────────────────────────────────────────
       skim_variable         n_missing complete_rate ordered n_unique
-    1 control                       1        1.00   FALSE          3
-    2 adm_req_test               8685        0.231  FALSE          4
-    3 religious_affiliation     10449        0.0753 FALSE         60
-      top_counts                              
-    1 For: 5908, Non: 2760, Pub: 2631         
-    2 Con: 1205, Not: 1015, Req: 273, Rec: 122
-    3 Rom: 232, Uni: 85, Bap: 56, Pre: 54     
+    1 deg_predominant             998        0.912  FALSE          4
+    2 deg_highest                1193        0.894  FALSE          4
+    3 control                       1        1.00   FALSE          3
+    4 locale_type                5415        0.521  FALSE          4
+    5 locale_size                5415        0.521  FALSE          6
+    6 adm_req_test               8685        0.231  FALSE          4
+    7 religious_affiliation     10449        0.0753 FALSE         60
+      top_counts                                
+    1 Cer: 5483, Bac: 2549, Ass: 1819, Gra: 451 
+    2 Cer: 4287, Gra: 2517, Ass: 2111, Bac: 1192
+    3 For: 5908, Non: 2760, Pub: 2631           
+    4 Cit: 2812, Sub: 1750, Tow: 822, Rur: 501  
+    5 Lar: 2809, Sma: 887, Mid: 866, Dis: 508   
+    6 Con: 1205, Not: 1015, Req: 273, Rec: 122  
+    7 Rom: 232, Uni: 85, Bap: 56, Pre: 54       
 
     ── Variable type: logical ──────────────────────────────────────────────────────
        skim_variable    n_missing complete_rate    mean count              
@@ -120,12 +130,12 @@ skimr::skim_tee(scorecard_tidy)
                                Values
     Name                       data  
     Number of rows             183306
-    Number of columns          24    
+    Number of columns          23    
     _______________________          
     Column type frequency:           
       character                1     
-      logical                  6     
-      numeric                  17    
+      logical                  2     
+      numeric                  20    
     ________________________         
     Group variables            None  
 
@@ -134,13 +144,9 @@ skimr::skim_tee(scorecard_tidy)
     1 academic_year         0             1   7   7     0       27          0
 
     ── Variable type: logical ──────────────────────────────────────────────────────
-      skim_variable                 n_missing complete_rate mean count
-    1 cost_med_similar                 183306             0  NaN ": " 
-    2 cost_med_overall                 183306             0  NaN ": " 
-    3 amnt_earnings_med_10y_similar    183306             0  NaN ": " 
-    4 amnt_earnings_med_10y_overall    183306             0  NaN ": " 
-    5 rate_completion_med_similar      183306             0  NaN ": " 
-    6 rate_completion_med_overall      183306             0  NaN ": " 
+      skim_variable    n_missing complete_rate mean count
+    1 cost_med_similar    183306             0  NaN ": " 
+    2 cost_med_overall    183306             0  NaN ": " 
 
     ── Variable type: numeric ──────────────────────────────────────────────────────
        skim_variable             n_missing complete_rate        mean          sd
@@ -152,15 +158,18 @@ skimr::skim_tee(scorecard_tidy)
      6 cost_avg_income_48_75k       120294       0.344     16807.       7750.   
      7 cost_avg_income_75_110k      129900       0.291     19224.       7843.   
      8 cost_avg_income_110k_plus    138593       0.244     21352.       9036.   
-     9 amt_earnings_med_10y         138347       0.245     35399.      14829.   
+     9 amnt_earnings_med_10y        143433       0.218     35228.      15046.   
     10 rate_completion              134721       0.265         0.333       0.237
     11 rate_admissions              181562       0.00951       0.722       0.221
     12 score_act_p25                156788       0.145        20.2         3.69 
-    13 score_act_p75                156794       0.145        25.4         3.55 
-    14 score_sat_verbal_p25         156906       0.144       484.         72.3  
-    15 score_sat_verbal_p75         156905       0.144       592.         69.3  
-    16 score_sat_math_p25           156771       0.145       486.         75.7  
-    17 score_sat_math_p75           156773       0.145       594.         72.3  
+    13 score_act_p50                182314       0.00541      24.5         4.56 
+    14 score_act_p75                156794       0.145        25.4         3.55 
+    15 score_sat_verbal_p25         156906       0.144       484.         72.3  
+    16 score_sat_verbal_p50         182311       0.00543     587.         71.6  
+    17 score_sat_verbal_p75         156905       0.144       592.         69.3  
+    18 score_sat_math_p25           156771       0.145       486.         75.7  
+    19 score_sat_math_p50           182311       0.00543     580.         78.8  
+    20 score_sat_math_p75           156773       0.145       594.         72.3  
                  p0        p25        p50        p75     p100 hist 
      1  100654      164562     213987     416670     49664501 ▇▁▁▁▁
      2       0         117        490       2050       253594 ▇▁▁▁▁
@@ -170,15 +179,18 @@ skimr::skim_tee(scorecard_tidy)
      6  -17804       10711.     16289      21716       113427 ▂▇▁▁▁
      7  -18045       13149.     18933      24285.      114298 ▁▇▁▁▁
      8  -17487       14415      20448      26533       113314 ▁▇▁▁▁
-     9    8400       25700      33200      42400       250000 ▇▁▁▁▁
+     9    8400       25400      32900      42000       250000 ▇▁▁▁▁
     10       0           0.145      0.3        0.498        1 ▇▇▅▂▁
     11       0.0106      0.612      0.773      0.889        1 ▁▁▂▆▇
     12       1          18         20         22           35 ▁▁▇▃▁
-    13       2          23         25         27           36 ▁▁▂▇▂
-    14     100         440        480        520          799 ▁▁▇▃▁
-    15     100         540        590        630          800 ▁▁▂▇▂
-    16     100         440        475        520          799 ▁▁▇▃▁
-    17     100         550        588        630          800 ▁▁▂▇▂
+    13       5          21         24         27           35 ▁▁▇▆▃
+    14       2          23         25         27           36 ▁▁▂▇▂
+    15     100         440        480        520          799 ▁▁▇▃▁
+    16     380         540        580        630          760 ▁▅▇▅▂
+    17     100         540        590        630          800 ▁▁▂▇▂
+    18     100         440        475        520          799 ▁▁▇▃▁
+    19     310         530        570        620          800 ▁▂▇▃▁
+    20     100         550        588        630          800 ▁▁▂▇▂
 
 For ease of use, the variables in `school_tidy` and `scorecard_tidy`
 have been renamed from the original names. I don’t yet have a mapping

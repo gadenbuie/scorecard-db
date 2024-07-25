@@ -8,3 +8,5 @@ CollegeScorecard_Raw_Data.zip
 .Rhistory
 data/site/scorecard_used_on_site.csv
 data/site/scorecard_used_on_site.db
+
+/.quarto/
