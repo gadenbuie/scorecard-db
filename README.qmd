@@ -23,6 +23,8 @@ We use [targets](https://docs.ropensci.org/targets/) to manage the data prep pip
 targets::tar_make()
 ```
 
+To update the data, invalidate the `url_data_zip` target -- `targets::tar_invalidate("url_data_zip")` -- and run `targets::tar_make()` again.
+
 ### Raw College Scorecard Data
 
 The raw College Scorecard data is available as a set of parquet files in `data/parquet`. The complete scorecard dataset is stored as a set of parquet files in `` `r targets::tar_read("path_data_full_merged")` ``. Two informational tables contain the data dictionary (`` `r targets::tar_read("path_data_full_info")` ``) and the variable labels (`` `r targets::tar_read("path_data_full_labels")` ``) for categorical variables in the scorecard dataset.
