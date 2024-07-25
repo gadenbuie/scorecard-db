@@ -8,7 +8,8 @@ global_duckdb <- function() {
 }
 
 tbl_merged <- function(
-	path_data_full_merged = tar_read("path_data_full_merged")) {
+	path_data_full_merged = tar_read("path_data_full_merged")
+) {
 	con <- global_duckdb()
 	DBI::dbExecute(
 		con,
@@ -21,7 +22,8 @@ tbl_merged <- function(
 }
 
 tbl_info <- function(
-	path_data_full_info = tar_read("path_data_full_info")) {
+	path_data_full_info = tar_read("path_data_full_info")
+) {
 	con <- global_duckdb()
 	DBI::dbExecute(
 		con,
@@ -34,7 +36,8 @@ tbl_info <- function(
 }
 
 tbl_labels <- function(
-	path_data_full_labels = tar_read("path_data_full_labels")) {
+	path_data_full_labels = tar_read("path_data_full_labels")
+) {
 	con <- global_duckdb()
 	DBI::dbExecute(
 		con,
