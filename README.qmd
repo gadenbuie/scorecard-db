@@ -9,7 +9,7 @@ The code in this repository is licensed under [the MIT License](https://mit-lice
 
 ## Dependencies and Setup
 
-This project uses [renv](https://rstudio.github.io/renv) to manage dependencies. To install the dependencies, run `renv::restore()` in the R console on R 4.4.0.
+This project uses [renv](https://rstudio.github.io/renv) to manage dependencies. To install the dependencies, run `renv::restore()` in the R console on R 4.4.1.
 
 ```r
 renv::restore()
