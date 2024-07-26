@@ -1,6 +1,6 @@
 name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
 .globals|object|116287f287444c70|||||||||||||||
-.Random.seed|object|8d5a442474101a6d|||||||||||||||
+.Random.seed|object|96c7ffad400c0ace|||||||||||||||
 cs_data_dictionary_info_to_parquet|function|60cb6db46577e4bd|||||||||||||||
 cs_data_dictionary_labels_to_parquet|function|2932b8b421d24490|||||||||||||||
 cs_data_download|function|6c5749e1aed2e93b|||||||||||||||
@@ -27,6 +27,7 @@ labels|object|7e3e051befc2309d|||||||||||||||
 m|object|23d4013565d756e9|||||||||||||||
 merged|object|bd28ee25fbdce66b|||||||||||||||
 merged_keep|object|631420c0c5670b67|||||||||||||||
+name_file|stem||43d26342dbdb67f2|2c530c1562a7fbd1|-936251944||t19930.707321848s||0|file|local|vector|||||_build_ target name_file did not return a character. dynamic files targets with format  file must return character vectors of file or directory paths.
 new_vars|object|fb1f7dfb9c820d43|||||||||||||||
 out_full_info_parquet|function|184e2e508f1cfeff|||||||||||||||
 out_full_labels_parquet|function|3c4c8517ae83cff7|||||||||||||||
@@ -42,7 +43,8 @@ path_data_full_info|stem|c2c570c418d903ae|d14780559029070d|2792e1049d2c8e1c|1028
 path_data_full_labels|stem|d25a416430095279|17d3912c0db30450|008d029446aeba16|-646719716|data/parquet/dd_labels.parquet|t19929.8583410496s|0769a1509a150a8b|4785|file|local|vector|||0.278||
 path_data_full_merged|stem|86e970fb8dade4bd|87941e74f805a63c|46fc64b786d06a26|1007750981|data/parquet/merged|t19929.8596102489s|7d2439bdc4e9a0ed|928|file|local|vector|||110.052||
 path_data_pkg_data_dictionary|stem|7f64d27a16de8c73|6b2e95f5f245f800|327c4bca4fa52ff0|-1702454432||t19930.6066435665s|d21be8cf0dd771ce|44|rds|local|vector|||0.132||
-path_data_pkg_docs|stem|1f7cfd2cb6a20b86|e9fcdd8b9af6a6e0|65b67bd816c034e9|982306252||t19930.6311293594s|8071792e16b364e8|154|rds|local|vector|||1.146||
+path_data_pkg_docs|stem|1f7cfd2cb6a20b86|fba9a37e2a16f96f|c8eb7691cb5ecff6|982306252||t19930.7185833979s|8071792e16b364e8|154|rds|local|vector|||1.315||
+path_data_pkg_docs_files|stem|83318fcf285cc838|ed121248359d5ece|2c530c1562a7fbd1|-858485250|pkg/R*pkg/DESCRIPTION|t19930.7173371962s|ebee074f9e49ca9b|5766|file|local|vector|||0.09||
 path_data_pkg_school|stem|67ec32fdf76086bd|4a2f4ff80c83170f|1c74f6a9d508af80|1541609634|pkg/data/school.rda|t19929.8600778419s|ae1ff357de7f498d|327478|file|local|vector|||0.348||
 path_data_pkg_scorecard|stem|7f8ff86775f16c30|86fa77acf1fd2be9|cadfc350cd886353|-434225160|pkg/data/scorecard.rda|t19930.6294524323s|db8cea6e366e6958|2549453|file|local|vector|||5.476||
 path_data_raw|stem|20eca314b5940322|3d3dba63cadb30aa|263f014b95befe4c|-164410244|data-raw/college-scorecard-raw|t19929.8581093567s|28ba29e888e8fabd|1280|file|local|vector|||14.878||
@@ -60,6 +62,8 @@ pkg_deps|object|ca465f1069698a39|||||||||||||||
 school_tidy|stem|356ee5b8be9c824f|fc305e52b39bcf54|81b0e8d8fcaee356|366396326||t19930.6282636094s|bbbc5769cf349ead|445776|rds|local|vector|||1.319||
 scorecard_tidy|stem|87222c32b164c63c|fcf7ac32379ff230|77d9b48526ee6ce0|1107603213||t19930.6293862401s|6f7b07da10e6aee3|4002346|rds|local|vector|||1.312||
 site_extra_vars|object|8440b4e7ac6c2a96|||||||||||||||
+sym_file|stem||9e1b47e06067f43b|2c530c1562a7fbd1|-554716669||t19930.7078499672s||0|file|local|vector|||0.088||cannot coerce type closure to vector of type character
+tar_when_file_changes|function|86e08dd5cde2a867|||||||||||||||
 tbl_info|function|94ff84d7f33be65c|||||||||||||||
 tbl_labels|function|2fb0eb4b569e0361|||||||||||||||
 tbl_merged|function|c43661f2e7d01ebc|||||||||||||||

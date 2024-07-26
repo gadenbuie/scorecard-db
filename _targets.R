@@ -121,16 +121,17 @@ list(
   tar_target("path_data_pkg_data_dictionary", {
     saveRDS(data_dictionary, "pkg/inst/scorecard-data-dictionary.rds")
   }),
-  tar_target(
+  tar_when_file_changes(
     "path_data_pkg_docs",
+    file = c("pkg/R", "pkg/DESCRIPTION"),
     usethis::with_project("pkg", {
       path_data_pkg_school
       path_data_pkg_scorecard
-
+  
       usethis::use_tidy_description()
       devtools::document()
       fs::dir_ls("man")
-    }),
+    })
   ),
 
   NULL
