@@ -123,13 +123,14 @@ list(
   }),
   tar_when_file_changes(
     "path_data_pkg_docs",
-    file = c("pkg/R", "pkg/DESCRIPTION"),
+    file = c("pkg/R", "pkg/DESCRIPTION", "pkg/README.Rmd"),
     usethis::with_project("pkg", {
       path_data_pkg_school
       path_data_pkg_scorecard
   
       usethis::use_tidy_description()
       devtools::document()
+      devtools::build_readme()
       fs::dir_ls("man")
     })
   ),

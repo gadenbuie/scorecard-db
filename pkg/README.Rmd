@@ -1,0 +1,68 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# collegeScorecard
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+collegeScorecard provides a tidied subset of the [US College Scorecard dataset](https://collegescorecard.ed.gov/data/), containing institutional characteristics, enrollment, student aid, costs, and student outcomes at institutions of higher education in the United States.
+
+## Installation
+
+Install collegeScorecard from CRAN with:
+
+``` r
+install.packages("collegeScorecard")
+```
+
+Or install the development version from r-universe
+
+``` r
+install.packages(
+  "collegeScorecard",
+  repos = c("https://gadenbuie.r-universe.dev", "https://cloud.r-project.org")
+)
+```
+
+or from Github
+
+``` r
+# install.packages("pak")
+pak::pak("gadenbuie/scorecard-db/pkg")
+```
+
+## Example
+
+Loading collegeScorecard gives you access to `school` and `scorecard` tables, which are tibbles with information about institutions and yearly costs and admissions data, respectively.
+
+```{r}
+library(collegeScorecard)
+```
+
+```{r}
+skimr::skim_tee(school)
+```
+
+```{r}
+skimr::skim_tee(scorecard)
+```
+
+The help documentation of each dataset provides a short description of each column and the source of the data.
+Additional information is included in the packaged data dictionary.
+
+```{r}
+readRDS(system.file("scorecard-data-dictionary.rds", package = "collegeScorecard"))
+```
