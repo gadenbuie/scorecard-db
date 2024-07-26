@@ -104,7 +104,7 @@ list(
     "path_data_pkg_school",
     usethis::with_project("pkg", {
       school <- school_tidy
-      usethis::use_data(school, overwrite = TRUE)
+      usethis::use_data(school, overwrite = TRUE, compress = "bzip2")
       "pkg/data/school.rda"
     }),
     format = "file"
@@ -113,7 +113,7 @@ list(
     "path_data_pkg_scorecard",
     usethis::with_project("pkg", {
       scorecard <- scorecard_tidy
-      usethis::use_data(scorecard, overwrite = TRUE)
+      usethis::use_data(scorecard, overwrite = TRUE, compress = "bzip2")
       "pkg/data/scorecard.rda"
     }),
     format = "file"

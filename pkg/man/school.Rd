@@ -33,7 +33,7 @@ from the source dataset are noted in parenthesis.
 \item{\code{is_only_men}}{\verb{[logical]} Flag for men-only college. (\code{MENONLY})}
 \item{\code{is_only_women}}{\verb{[logical]} Flag for women-only college. (\code{WOMENONLY})}
 \item{\code{is_only_distance}}{\verb{[logical]} Flag for distance-education-only education. (\code{DISTANCEONLY})}
-\item{\code{religious_affiliation}}{\verb{[factor]} Religous affiliation of the institution. (\code{RELAFFIL})}
+\item{\code{religious_affiliation}}{\verb{[factor]} Religious affiliation of the institution. (\code{RELAFFIL})}
 }
 }
 \usage{
@@ -53,5 +53,8 @@ You can find the original data set at the U.S. Department of Education's
 \href{https://collegescorecard.ed.gov/data/}{College Scorecard website}. The
 code for the data transformation process is available at
 \url{https://github.com/gadenbuie/scorecard-db}.
+}
+\references{
+\url{https://collegescorecard.ed.gov/data/}
 }
 \keyword{datasets}

@@ -1,3 +1,11 @@
+#' @section Updated:
+#' 
+#' The data were last updated on **June 13, 2024** at
+#' <https://collegescorecard.ed.gov/data/>. Please visit
+#' <https://github.com/gadenbuie/scorecard-db> for the code used to process
+#' and transform the released data into the tidy data sets available in this
+#' package.
+#' 
 #' @keywords internal
 "_PACKAGE"
 
@@ -17,6 +25,8 @@
 #' [College Scorecard website](https://collegescorecard.ed.gov/data/). The
 #' code for the data transformation process is available at
 #' <https://github.com/gadenbuie/scorecard-db>.
+#' 
+#' @references <https://collegescorecard.ed.gov/data/>
 #'
 #' @format A data frame with `r .docs_df_shape(scorecard)`. Original column
 #'   names from the source dataset are noted in parenthesis.
@@ -41,6 +51,8 @@
 #' [College Scorecard website](https://collegescorecard.ed.gov/data/). The
 #' code for the data transformation process is available at
 #' <https://github.com/gadenbuie/scorecard-db>.
+#' 
+#' @references <https://collegescorecard.ed.gov/data/>
 #'
 #' @format A data frame with `r .docs_df_shape(school)`. Original column names
 #'   from the source dataset are noted in parenthesis.
@@ -138,7 +150,7 @@
 		is_only_men = "MENONLY",
 		is_only_women = "WOMENONLY",
 		is_only_distance = "DISTANCEONLY",
-		religious_affiliation = "RELAFFIL"
+		religious_affiliation = "Religious affiliation of the institution. (`RELAFFIL`)" # fix spelling
 	),
 	scorecard = list(
 		id = "A unique identifier for each institution. (`UNITID`)",

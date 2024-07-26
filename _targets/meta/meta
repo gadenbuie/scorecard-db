@@ -1,6 +1,6 @@
 name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
 .globals|object|116287f287444c70|||||||||||||||
-.Random.seed|object|96c7ffad400c0ace|||||||||||||||
+.Random.seed|object|37044fa6bc8016b2|||||||||||||||
 cs_data_dictionary_info_to_parquet|function|60cb6db46577e4bd|||||||||||||||
 cs_data_dictionary_labels_to_parquet|function|2932b8b421d24490|||||||||||||||
 cs_data_download|function|6c5749e1aed2e93b|||||||||||||||
@@ -43,10 +43,10 @@ path_data_full_info|stem|c2c570c418d903ae|d14780559029070d|2792e1049d2c8e1c|1028
 path_data_full_labels|stem|d25a416430095279|17d3912c0db30450|008d029446aeba16|-646719716|data/parquet/dd_labels.parquet|t19929.8583410496s|0769a1509a150a8b|4785|file|local|vector|||0.278||
 path_data_full_merged|stem|86e970fb8dade4bd|87941e74f805a63c|46fc64b786d06a26|1007750981|data/parquet/merged|t19929.8596102489s|7d2439bdc4e9a0ed|928|file|local|vector|||110.052||
 path_data_pkg_data_dictionary|stem|7f64d27a16de8c73|6b2e95f5f245f800|327c4bca4fa52ff0|-1702454432||t19930.6066435665s|d21be8cf0dd771ce|44|rds|local|vector|||0.132||
-path_data_pkg_docs|stem|1f7cfd2cb6a20b86|fba9a37e2a16f96f|c8eb7691cb5ecff6|982306252||t19930.7185833979s|8071792e16b364e8|154|rds|local|vector|||1.315||
-path_data_pkg_docs_files|stem|83318fcf285cc838|ed121248359d5ece|2c530c1562a7fbd1|-858485250|pkg/R*pkg/DESCRIPTION|t19930.7173371962s|ebee074f9e49ca9b|5766|file|local|vector|||0.09||
-path_data_pkg_school|stem|67ec32fdf76086bd|4a2f4ff80c83170f|1c74f6a9d508af80|1541609634|pkg/data/school.rda|t19929.8600778419s|ae1ff357de7f498d|327478|file|local|vector|||0.348||
-path_data_pkg_scorecard|stem|7f8ff86775f16c30|86fa77acf1fd2be9|cadfc350cd886353|-434225160|pkg/data/scorecard.rda|t19930.6294524323s|db8cea6e366e6958|2549453|file|local|vector|||5.476||
+path_data_pkg_docs|stem|1f7cfd2cb6a20b86|fba9a37e2a16f96f|7199bf9432178ecb|982306252||t19930.7938010261s|8071792e16b364e8|154|rds|local|vector|||1.137||
+path_data_pkg_docs_files|stem|dd70a2f69d67d7db|ed121248359d5ece|2c530c1562a7fbd1|-858485250|pkg/R*pkg/DESCRIPTION|t19930.7934244429s|dac3b976cf579e36|6380|file|local|vector|||0.089||
+path_data_pkg_school|stem|67ec32fdf76086bd|4303a5ba07083c08|1c74f6a9d508af80|1541609634|pkg/data/school.rda|t19930.7917960793s|ae1ff357de7f498d|327478|file|local|vector|||0.337||
+path_data_pkg_scorecard|stem|7f8ff86775f16c30|6479a53e3ed430cd|cadfc350cd886353|-434225160|pkg/data/scorecard.rda|t19930.7918379115s|db8cea6e366e6958|2549453|file|local|vector|||5.528||
 path_data_raw|stem|20eca314b5940322|3d3dba63cadb30aa|263f014b95befe4c|-164410244|data-raw/college-scorecard-raw|t19929.8581093567s|28ba29e888e8fabd|1280|file|local|vector|||14.878||
 path_data_raw_dictionary|stem|d455961408948ba7|6ec1fdeb902c7f47|85ddac75372b55d2|547851235|data-raw/college-scorecard-raw/CollegeScorecardDataDictionary.xlsx|t19880.6542824074s|6afe7520e54e1e64|748796|file|local|vector|||0.005||
 path_data_raw_merged|stem|157f7d3123200d3c|f3ef5bec59fa5968|869874030c9d4a96|1479081353|data-raw/college-scorecard-raw/MERGED1996_97_PP.csv*data-raw/college-scorecard-raw/MERGED1997_98_PP.csv*data-raw/college-scorecard-raw/MERGED1998_99_PP.csv*data-raw/college-scorecard-raw/MERGED1999_00_PP.csv*data-raw/college-scorecard-raw/MERGED2000_01_PP.csv*data-raw/college-scorecard-raw/MERGED2001_02_PP.csv*data-raw/college-scorecard-raw/MERGED2002_03_PP.csv*data-raw/college-scorecard-raw/MERGED2003_04_PP.csv*data-raw/college-scorecard-raw/MERGED2004_05_PP.csv*data-raw/college-scorecard-raw/MERGED2005_06_PP.csv*data-raw/college-scorecard-raw/MERGED2006_07_PP.csv*data-raw/college-scorecard-raw/MERGED2007_08_PP.csv*data-raw/college-scorecard-raw/MERGED2008_09_PP.csv*data-raw/college-scorecard-raw/MERGED2009_10_PP.csv*data-raw/college-scorecard-raw/MERGED2010_11_PP.csv*data-raw/college-scorecard-raw/MERGED2011_12_PP.csv*data-raw/college-scorecard-raw/MERGED2012_13_PP.csv*data-raw/college-scorecard-raw/MERGED2013_14_PP.csv*data-raw/college-scorecard-raw/MERGED2014_15_PP.csv*data-raw/college-scorecard-raw/MERGED2015_16_PP.csv*data-raw/college-scorecard-raw/MERGED2016_17_PP.csv*data-raw/college-scorecard-raw/MERGED2017_18_PP.csv*data-raw/college-scorecard-raw/MERGED2018_19_PP.csv*data-raw/college-scorecard-raw/MERGED2019_20_PP.csv*data-raw/college-scorecard-raw/MERGED2020_21_PP.csv*data-raw/college-scorecard-raw/MERGED2021_22_PP.csv*data-raw/college-scorecard-raw/MERGED2022_23_PP.csv|t19873.811712963s|d05bcb83fe2a96b1|2271750668|file|local|vector|||0||

@@ -4,14 +4,25 @@
 \name{collegeScorecard-package}
 \alias{collegeScorecard}
 \alias{collegeScorecard-package}
-\title{collegeScorecard: U.S. College Scorecard Data}
+\title{collegeScorecard: US College Scorecard Data}
 \description{
-The US College Scorecard dataset provides information on institutional characteristics, enrollment, student aid, costs, and student outcomes.
+Provides a tidied subset of the US College Scorecard dataset, containing institutional characteristics, enrollment, student aid, costs, and student outcomes at institutions of higher education in the United States.
 }
+\section{Updated}{
+
+
+The data were last updated on \strong{June 13, 2024} at
+\url{https://collegescorecard.ed.gov/data/}. Please visit
+\url{https://github.com/gadenbuie/scorecard-db} for the code used to process
+and transform the released data into the tidy data sets available in this
+package.
+}
+
 \seealso{
 Useful links:
 \itemize{
   \item \url{https://github.com/gadenbuie/scorecard-db}
+  \item \url{https://collegescorecard.ed.gov/data/}
   \item Report bugs at \url{https://github.com/gadenbuie/scorecard-db/issues}
 }
 

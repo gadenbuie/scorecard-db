@@ -53,4 +53,7 @@ You can find the original data set at the U.S. Department of Education's
 code for the data transformation process is available at
 \url{https://github.com/gadenbuie/scorecard-db}.
 }
+\references{
+\url{https://collegescorecard.ed.gov/data/}
+}
 \keyword{datasets}
