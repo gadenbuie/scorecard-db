@@ -5,32 +5,34 @@
 \alias{scorecard}
 \title{College Scorecard: Scorecard Data}
 \format{
-A data frame with 183,306 rows and 23 variables. Original column
+A data frame with 183,306 rows and 24 variables. Original column
 names from the source dataset are noted in parenthesis.
+
 \describe{
 \item{\code{id}}{\verb{[integer]} A unique identifier for each institution. (\code{UNITID})}
 \item{\code{academic_year}}{\verb{[character]} The academic year of the record.}
 \item{\code{n_undergrads}}{\verb{[integer]} Enrollment of undergraduate certificate/degree-seeking students. (\code{UGDS})}
-\item{\code{cost_avg}}{\verb{[double]} Average net price for Title IV institutions. (\code{NPT4_PRIV} and \code{NPT4_PUB})}
-\item{\code{cost_med_similar}}{\verb{[logical]} Median average net price amongst insitituions with the same predominant degree category. (\code{MDCOST_PD})}
-\item{\code{cost_med_overall}}{\verb{[logical]} Overall median for average net price. (\code{MDCOST_ALL})}
-\item{\code{cost_avg_income_0_30k}}{\verb{[double]} Average net price for $0-$30,000 family income. (\code{NPT41_PRIV} and \code{NPT41_PUB})}
-\item{\code{cost_avg_income_30_48k}}{\verb{[double]} Average net price for $30,001-$48,000 family income. (\code{NPT42_PRIV} and \code{NPT42_PUB})}
-\item{\code{cost_avg_income_48_75k}}{\verb{[double]} Average net price for $48,001-$75,000 family income. (\code{NPT43_PRIV} and \code{NPT43_PUB})}
-\item{\code{cost_avg_income_75_110k}}{\verb{[double]} Average net price for $75,001-$110,000 family income. (\code{NPT44_PRIV} and \code{NPT44_PUB})}
-\item{\code{cost_avg_income_110k_plus}}{\verb{[double]} Average net price for $110,000+ family income. (\code{NPT45_PRIV} and \code{NPT45_PUB})}
-\item{\code{amnt_earnings_med_10y}}{\verb{[double]} Median earnings of students working and not enrolled 10 years after entry. (\code{MD_EARN_WNE_P10})}
-\item{\code{rate_completion}}{\verb{[double]} Completion rate for first-time, full-time students at four-year institutions (100\% of expected time to completion)N. (\code{C100_4})}
-\item{\code{rate_admissions}}{\verb{[double]} Admission rate, suppressed for n<30. (\code{ADM_RATE_SUPP})}
-\item{\code{score_act_p25}}{\verb{[double]} 25th percentile of the ACT cumulative score. (\code{ACTCM25})}
-\item{\code{score_act_p50}}{\verb{[double]} 50th percentile of the ACT cumulative score. (\code{ACTCM50})}
-\item{\code{score_act_p75}}{\verb{[double]} 75th percentile of the ACT cumulative score. (\code{ACTCM75})}
-\item{\code{score_sat_verbal_p25}}{\verb{[double]} 25th percentile of SAT scores at the institution (critical reading). (\code{SATVR25})}
-\item{\code{score_sat_verbal_p50}}{\verb{[double]} 50th percentile of SAT scores at the institution (critical reading). (\code{SATVR50})}
-\item{\code{score_sat_verbal_p75}}{\verb{[double]} 75th percentile of SAT scores at the institution (critical reading). (\code{SATVR75})}
-\item{\code{score_sat_math_p25}}{\verb{[double]} 25th percentile of SAT scores at the institution (math). (\code{SATMT25})}
-\item{\code{score_sat_math_p50}}{\verb{[double]} 50th percentile of SAT scores at the institution (math). (\code{SATMT50})}
-\item{\code{score_sat_math_p75}}{\verb{[double]} 75th percentile of SAT scores at the institution (math). (\code{SATMT75})}
+\item{\code{cost_tuition_in}}{\verb{[numeric]} In-state tuition and fees. (\code{TUITIONFEE_IN})}
+\item{\code{cost_tuition_out}}{\verb{[numeric]} Out-of-state tuition and fees. (\code{TUITIONFEE_OUT})}
+\item{\code{cost_books}}{\verb{[numeric]} Cost of attendance: estimated books and supplies. (\code{BOOKSUPPLY})}
+\item{\code{cost_room_board_on}}{\verb{[numeric]} Cost of attendance: on-campus room and board. (\code{ROOMBOARD_ON})}
+\item{\code{cost_room_board_off}}{\verb{[numeric]} Cost of attendance: off-campus room and board. (\code{ROOMBOARD_OFF})}
+\item{\code{cost_avg}}{\verb{[numeric]} Average net price for Title IV institutions (private for-profit and nonprofit institutions). (\code{NPT4_PRIV})}
+\item{\code{cost_avg_income_0_30k}}{\verb{[numeric]} Average net price for $0-$30,000 family income (private for-profit and nonprofit institutions). (\code{NPT41_PRIV})}
+\item{\code{cost_avg_income_30_48k}}{\verb{[numeric]} Average net price for $30,001-$48,000 family income (private for-profit and nonprofit institutions). (\code{NPT42_PRIV})}
+\item{\code{cost_avg_income_48_75k}}{\verb{[numeric]} Average net price for $48,001-$75,000 family income (private for-profit and nonprofit institutions). (\code{NPT43_PRIV})}
+\item{\code{cost_avg_income_75_110k}}{\verb{[numeric]} Average net price for $75,001-$110,000 family income (private for-profit and nonprofit institutions). (\code{NPT44_PRIV})}
+\item{\code{cost_avg_income_110k_plus}}{\verb{[numeric]} Average net price for $110,000+ family income (private for-profit and nonprofit institutions). (\code{NPT45_PRIV})}
+\item{\code{amnt_earnings_med_10y}}{\verb{[numeric]} Median earnings of students working and not enrolled 10 years after entry. (\code{MD_EARN_WNE_P10})}
+\item{\code{rate_completion}}{\verb{[numeric]} Completion rate for first-time, full-time students at four-year institutions (100\% of expected time to completion). (\code{C100_4})}
+\item{\code{rate_admissions}}{\verb{[numeric]} Admission rate for all campuses rolled up to the 6-digit OPE ID. (\code{ADM_RATE_ALL})}
+\item{\code{score_sat_avg}}{\verb{[numeric]} Average SAT equivalent score of students admitted. (\code{SAT_AVG})}
+\item{\code{score_act_p25}}{\verb{[numeric]} 25th percentile of the ACT cumulative score. (\code{ACTCM25})}
+\item{\code{score_act_p75}}{\verb{[numeric]} 75th percentile of the ACT cumulative score. (\code{ACTCM75})}
+\item{\code{score_sat_verbal_p25}}{\verb{[numeric]} 25th percentile of SAT scores at the institution (critical reading). (\code{SATVR25})}
+\item{\code{score_sat_verbal_p75}}{\verb{[numeric]} 75th percentile of SAT scores at the institution (critical reading). (\code{SATVR75})}
+\item{\code{score_sat_math_p25}}{\verb{[numeric]} 25th percentile of SAT scores at the institution (math). (\code{SATMT25})}
+\item{\code{score_sat_math_p75}}{\verb{[numeric]} 75th percentile of SAT scores at the institution (math). (\code{SATMT75})}
 }
 }
 \usage{

@@ -129,14 +129,20 @@ tidy_scorecard <- function(
 			n_undergrads = as.integer(student_ugds),
 
 			# Cost ----
+			cost_tuition_in = cost_tuitionfee_in,
+			cost_tuition_out = cost_tuitionfee_out,
+			cost_books = cost_booksupply,
+			cost_room_board_on = cost_roomboard_on,
+			cost_room_board_off = cost_roomboard_off,
 			cost_avg = coalesce(cost_npt4_priv, cost_npt4_pub),
-			cost_med_similar = cost_mdcost_pd,
-			cost_med_overall = cost_mdcost_all,
 			cost_avg_income_0_30k = coalesce(cost_npt41_priv, cost_npt41_pub),
 			cost_avg_income_30_48k = coalesce(cost_npt42_priv, cost_npt42_pub),
 			cost_avg_income_48_75k = coalesce(cost_npt43_priv, cost_npt43_pub),
 			cost_avg_income_75_110k = coalesce(cost_npt44_priv, cost_npt44_pub),
 			cost_avg_income_110k_plus = coalesce(cost_npt45_priv, cost_npt45_pub),
+			## These columns appear to be completely missing across all academic years
+			# cost_med_similar = cost_mdcost_pd,
+			# cost_med_overall = cost_mdcost_all,
 
 			# Earnings ----
 			# Median earnings of students working and not enrolled 10 years after entry
@@ -157,15 +163,17 @@ tidy_scorecard <- function(
 			# rate_completion_med_overall = completion_mdcomp_all,
 
 			# Admissions ----
-			rate_admissions = admissions_adm_rate_supp,
+			## Note p50 scores are missing in 99+% of cases, so they are excluded
+			rate_admissions = admissions_adm_rate_all,
+			score_sat_avg = admissions_sat_avg, # Average SAT equivalent score of students admitted
 			score_act_p25 = admissions_actcm25, # 25th percentile of the ACT cumulative score
-			score_act_p50 = admissions_actcm50, # 50th percentile of the ACT cumulative score
+			# score_act_p50 = admissions_actcm50, # 50th percentile of the ACT cumulative score
 			score_act_p75 = admissions_actcm75, # 75th percentile of the ACT cumulative score
 			score_sat_verbal_p25 = admissions_satvr25, # 25th percentile of SAT scores at the institution (critical reading)
-			score_sat_verbal_p50 = admissions_satvr50, # 50th percentile of SAT scores at the institution (critical reading)
+			# score_sat_verbal_p50 = admissions_satvr50, # 50th percentile of SAT scores at the institution (critical reading)
 			score_sat_verbal_p75 = admissions_satvr75, # 75th percentile of SAT scores at the institution (critical reading)
 			score_sat_math_p25 = admissions_satmt25, # 25th percentile of SAT scores at the institution (math)
-			score_sat_math_p50 = admissions_satmt50, # 50th percentile of SAT scores at the institution (math)
+			# score_sat_math_p50 = admissions_satmt50, # 50th percentile of SAT scores at the institution (math)
 			score_sat_math_p75 = admissions_satmt75, # 75th percentile of SAT scores at the institution (math)
 		)
 }

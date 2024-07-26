@@ -7,20 +7,21 @@
 \format{
 A data frame with 11,300 rows and 25 variables. Original column names
 from the source dataset are noted in parenthesis.
+
 \describe{
 \item{\code{id}}{\verb{[integer]} A unique identifier for each institution. (\code{UNITID})}
 \item{\code{name}}{\verb{[character]} Institution name. (\code{INSTNM})}
 \item{\code{city}}{\verb{[character]} City. (\code{CITY})}
-\item{\code{state}}{\verb{[character]} State abbreviation. (\code{STABBR})}
-\item{\code{zip}}{\verb{[character]} Zip code. (\code{ZIP})}
-\item{\code{latitude}}{\verb{[double]} Latitude. (\code{LATITUDE})}
-\item{\code{longitude}}{\verb{[double]} Longitude. (\code{LONGITUDE})}
+\item{\code{state}}{\verb{[character]} State postcode. (\code{STABBR})}
+\item{\code{zip}}{\verb{[character]} ZIP code. (\code{ZIP})}
+\item{\code{latitude}}{\verb{[numeric]} Latitude. (\code{LATITUDE})}
+\item{\code{longitude}}{\verb{[numeric]} Longitude. (\code{LONGITUDE})}
 \item{\code{url}}{\verb{[character]} URL for institution's homepage. (\code{INSTURL})}
 \item{\code{deg_predominant}}{\verb{[factor]} Predominant undergraduate degree awarded. (\code{PREDDEG})}
 \item{\code{deg_highest}}{\verb{[factor]} Highest degree awarded. (\code{HIGHDEG})}
 \item{\code{control}}{\verb{[factor]} Control of institution (IPEDS). (\code{CONTROL})}
-\item{\code{locale_type}}{\verb{[factor]} Locale of institution (City, suburb, town or rural) (\code{LOCALE})}
-\item{\code{locale_size}}{\verb{[factor]} Locale of institution (Large, medium, small (for city/suburb) or fringe, distant or remote (for town/rural). (\code{LOCALE})}
+\item{\code{locale_type}}{\verb{[factor]} Locale of institution. (\code{LOCALE})}
+\item{\code{locale_size}}{\verb{[factor]} Locale of institution. (\code{LOCALE})}
 \item{\code{adm_req_test}}{\verb{[factor]} Test score requirements for admission. (\code{ADMCON7})}
 \item{\code{is_hbcu}}{\verb{[logical]} Flag for Historically Black College and University. (\code{HBCU})}
 \item{\code{is_pbi}}{\verb{[logical]} Flag for predominantly black institution. (\code{PBI})}
@@ -30,9 +31,9 @@ from the source dataset are noted in parenthesis.
 \item{\code{is_hsi}}{\verb{[logical]} Flag for Hispanic-serving institution. (\code{HSI})}
 \item{\code{is_nanti}}{\verb{[logical]} Flag for Native American non-tribal institution. (\code{NANTI})}
 \item{\code{is_only_men}}{\verb{[logical]} Flag for men-only college. (\code{MENONLY})}
-\item{\code{is_only_women}}{\verb{[logical]} Flag for women-only college (\code{WOMENONLY})}
-\item{\code{is_only_distance}}{\verb{[logical]} Flag for distance-education-only education" (\code{DISTANCEONLY})}
-\item{\code{religious_affiliation}}{\verb{[integer]} Religous affiliation of the institution. (\code{RELAFFIL})}
+\item{\code{is_only_women}}{\verb{[logical]} Flag for women-only college. (\code{WOMENONLY})}
+\item{\code{is_only_distance}}{\verb{[logical]} Flag for distance-education-only education. (\code{DISTANCEONLY})}
+\item{\code{religious_affiliation}}{\verb{[factor]} Religous affiliation of the institution. (\code{RELAFFIL})}
 }
 }
 \usage{

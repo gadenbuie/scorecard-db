@@ -99,6 +99,7 @@ list(
   tar_target("path_data_tidy_school", out_tidy_school(school_tidy), format = "file"),
   tar_target("path_data_tidy_scorecard", out_tidy_scorecard(scorecard_tidy), format = "file"),
 
+  # Outputs: Package ----
   tar_target(
     "path_data_pkg_school",
     usethis::with_project("pkg", {
@@ -116,6 +117,20 @@ list(
       "pkg/data/scorecard.rda"
     }),
     format = "file"
+  ),
+  tar_target("path_data_pkg_data_dictionary", {
+    saveRDS(data_dictionary, "pkg/inst/scorecard-data-dictionary.rds")
+  }),
+  tar_target(
+    "path_data_pkg_docs",
+    usethis::with_project("pkg", {
+      path_data_pkg_school
+      path_data_pkg_scorecard
+
+      usethis::use_tidy_description()
+      devtools::document()
+      fs::dir_ls("man")
+    }),
   ),
 
   NULL

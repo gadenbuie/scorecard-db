@@ -1,4 +1,19 @@
-site_extra_vars <- c("ZIP", "LATITUDE", "LONGITUDE", "C100_4", "ACTCM50", "SATVR50", "SATMT50")
+site_extra_vars <- c(
+  "ZIP",
+  "LATITUDE",
+  "LONGITUDE",
+  "C100_4",
+	"SAT_AVG",
+	"ADM_RATE_ALL",
+  "ACTCM50",
+  "SATVR50",
+  "SATMT50",
+	"TUITIONFEE_IN",
+	"TUITIONFEE_OUT",
+	"BOOKSUPPLY",
+	"ROOMBOARD_ON",
+	"ROOMBOARD_OFF"
+)
 
 out_used_on_site_parquet <- function(
 	data_dictionary = tar_read("data_dictionary"),
