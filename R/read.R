@@ -8,9 +8,15 @@ global_duckdb <- function() {
 }
 
 tbl_merged <- function(
-	path_data_full_merged = tar_read("path_data_full_merged")
+	path_data_full_merged = tar_read("path_data_full_merged"),
+	rebuild = FALSE
 ) {
 	con <- global_duckdb()
+
+	if (DBI::dbExistsTable(con, "merged") && !rebuild) {
+		return(dplyr::tbl(con, "merged"))
+	}
+
 	DBI::dbExecute(
 		con,
 		glue(
