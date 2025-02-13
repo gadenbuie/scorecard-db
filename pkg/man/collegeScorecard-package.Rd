@@ -11,7 +11,7 @@ Provides a tidied subset of the US College Scorecard dataset, containing institu
 \section{Updated}{
 
 
-The data were last updated on \strong{June 13, 2024} at
+The data were last updated on \strong{January 16, 2025} from
 \url{https://collegescorecard.ed.gov/data/}. Please visit
 \url{https://github.com/gadenbuie/scorecard-db} for the code used to process
 and transform the released data into the tidy data sets available in this

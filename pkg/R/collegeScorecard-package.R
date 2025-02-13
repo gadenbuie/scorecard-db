@@ -1,11 +1,11 @@
 #' @section Updated:
-#' 
-#' The data were last updated on **June 13, 2024** at
+#'
+#' The data were last updated on **January 16, 2025** from
 #' <https://collegescorecard.ed.gov/data/>. Please visit
 #' <https://github.com/gadenbuie/scorecard-db> for the code used to process
 #' and transform the released data into the tidy data sets available in this
 #' package.
-#' 
+#'
 #' @keywords internal
 "_PACKAGE"
 
@@ -25,7 +25,7 @@
 #' [College Scorecard website](https://collegescorecard.ed.gov/data/). The
 #' code for the data transformation process is available at
 #' <https://github.com/gadenbuie/scorecard-db>.
-#' 
+#'
 #' @references <https://collegescorecard.ed.gov/data/>
 #'
 #' @format A data frame with `r .docs_df_shape(scorecard)`. Original column
@@ -33,7 +33,6 @@
 #'
 #' `r .doc_column_info("scorecard")`
 "scorecard"
-
 
 #' College Scorecard: School Data
 #'
@@ -51,7 +50,7 @@
 #' [College Scorecard website](https://collegescorecard.ed.gov/data/). The
 #' code for the data transformation process is available at
 #' <https://github.com/gadenbuie/scorecard-db>.
-#' 
+#'
 #' @references <https://collegescorecard.ed.gov/data/>
 #'
 #' @format A data frame with `r .docs_df_shape(school)`. Original column names
@@ -59,7 +58,6 @@
 #'
 #' `r .doc_column_info("school")`
 "school"
-
 
 .docs_df_shape <- function(df) {
 	n <- format(nrow(df), big.mark = ",")
@@ -70,7 +68,6 @@
 .doc_column_info <- function(name) {
 	df <- get(name)
 	dd <- readRDS(path_pkg("scorecard-data-dictionary.rds"))
-
 
 	col_item <- vapply(names(df), FUN.VALUE = character(1), function(col_name) {
 		# \item{\code{id}}{`[integer]` A unique identifier for each institution. (`UNITID`)}
@@ -89,7 +86,13 @@
 	ret <- .docs_var_map[[name]][[col]]
 
 	if (is.null(ret)) {
-		stop("No source column mapping found for ", col, " in the ", name, " dataset.")
+		stop(
+			"No source column mapping found for ",
+			col,
+			" in the ",
+			name,
+			" dataset."
+		)
 	}
 
 	ret

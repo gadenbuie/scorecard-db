@@ -1,6 +1,6 @@
 name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
 .globals|object|116287f287444c70|||||||||||||||
-.Random.seed|object|f9e4a361bd1fc543|||||||||||||||
+.Random.seed|object|bd76a5df6c1e6846|||||||||||||||
 cs_data_dictionary_info_to_parquet|function|60cb6db46577e4bd|||||||||||||||
 cs_data_dictionary_labels_to_parquet|function|2932b8b421d24490|||||||||||||||
 cs_data_download|function|6c5749e1aed2e93b|||||||||||||||
@@ -43,8 +43,8 @@ path_data_full_info|stem|c2c570c418d903ae|d14780559029070d|2792e1049d2c8e1c|1028
 path_data_full_labels|stem|d25a416430095279|17d3912c0db30450|008d029446aeba16|-646719716|data/parquet/dd_labels.parquet|t19929.8583410496s|0769a1509a150a8b|4785|file|local|vector|||0.278||
 path_data_full_merged|stem|5791ecce5112c4a0|87941e74f805a63c|53c9e12c2374cfd2|1007750981|data/parquet/merged|t20132.5654329503s|7d2439bdc4e9a0ed|928|file|local|vector|||109.657||
 path_data_pkg_data_dictionary|stem|7f64d27a16de8c73|6b2e95f5f245f800|327c4bca4fa52ff0|-1702454432||t19930.6066435665s|d21be8cf0dd771ce|44|rds|local|vector|||0.132||
-path_data_pkg_docs|stem|7bc105f720867062|61b9ed2facb6a36b|a8c84ce2fda7bdca|982306252||t20132.5691788396s|069a55b7c9ffa65a|155|rds|local|vector|||6.783||
-path_data_pkg_docs_files|stem|141f2b24d209b238|bdf25212c840ff65|2c530c1562a7fbd1|-858485250|pkg/R*pkg/DESCRIPTION*pkg/README.Rmd|t20132.5691011799s|6405cea45a739f1b|2458|file|local|vector|||0.067||
+path_data_pkg_docs|stem|7bc105f720867062|61b9ed2facb6a36b|2e59329003682e11|982306252||t20132.5932255502s|069a55b7c9ffa65a|155|rds|local|vector|||6.447||
+path_data_pkg_docs_files|stem|79a015faa2ae1a83|bdf25212c840ff65|2c530c1562a7fbd1|-858485250|pkg/R*pkg/DESCRIPTION*pkg/README.Rmd|t20132.5929367524s|4f3a9ff818b378bf|7964|file|local|vector|||0.065||
 path_data_pkg_school|stem|659f3bf54559dfc3|4303a5ba07083c08|95922403574d44a0|1541609634|pkg/data/school.rda|t20132.5659314927s|3baf887c3b990b4e|327460|file|local|vector|||0.214||
 path_data_pkg_scorecard|stem|2d3937408c7466ee|6479a53e3ed430cd|e3618ff48472279d|-434225160|pkg/data/scorecard.rda|t20132.5660166159s|b38788434fefa8a5|2549428|file|local|vector|||5.423||
 path_data_raw|stem|17c4be408460c907|3d3dba63cadb30aa|6054345196513880|-164410244|data-raw/college-scorecard-raw|t20132.5639080313s|c7ad7e56b7d9f809|1312|file|local|vector|||15.009||
