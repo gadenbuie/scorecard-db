@@ -1,6 +1,6 @@
 Package: collegeScorecard
 Title: US College Scorecard Data
-Version: 0.1.0.9000
+Version: 0.2.0
 Authors@R: 
     person("Garrick", "Aden-Buie", , "garrick@adenbuie.com", role = c("aut", "cre", "cph"),
            comment = c(ORCID = "0000-0002-7111-0077"))

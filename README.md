@@ -11,7 +11,7 @@ domain.
 
 ## Dependencies and Setup
 
-This project uses [renv](https://rstudio.github.io/renv) to manage
+This project uses [renv](https://rstudio.github.io/renv/) to manage
 dependencies. To install the dependencies, run `renv::restore()` in the
 R console on R 4.4.1.
 

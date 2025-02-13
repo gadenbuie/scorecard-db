@@ -4,6 +4,7 @@
 # collegeScorecard
 
 <!-- badges: start -->
+
 <!-- badges: end -->
 
 collegeScorecard provides a tidied subset of the [US College Scorecard
@@ -64,11 +65,11 @@ skimr::skim_tee(school)
 #> 
 #> ── Variable type: character ────────────────────────────────────────────────────
 #>   skim_variable n_missing complete_rate min max empty n_unique whitespace
-#> 1 name                  0         1       3  93     0    10525          0
-#> 2 city                  0         1       3  23     0     2915          0
+#> 1 name                  0         1       3  93     0    10536          0
+#> 2 city                  0         1       3  23     0     2914          0
 #> 3 state                 0         1       2   2     0       59          0
-#> 4 zip                   0         1       5  10     0     8757          0
-#> 5 url                4943         0.563  15 123     0     5435          0
+#> 4 zip                   0         1       5  10     0     8795          0
+#> 5 url                4931         0.564  15 136     0     5426          0
 #> 
 #> ── Variable type: factor ───────────────────────────────────────────────────────
 #>   skim_variable         n_missing complete_rate ordered n_unique
@@ -78,25 +79,25 @@ skimr::skim_tee(school)
 #> 4 locale_type                5415        0.521  FALSE          4
 #> 5 locale_size                5415        0.521  FALSE          6
 #> 6 adm_req_test               8685        0.231  FALSE          4
-#> 7 religious_affiliation     10449        0.0753 FALSE         60
+#> 7 religious_affiliation     10452        0.0750 FALSE         60
 #>   top_counts                                
 #> 1 Cer: 5483, Bac: 2549, Ass: 1819, Gra: 451 
 #> 2 Cer: 4287, Gra: 2517, Ass: 2111, Bac: 1192
 #> 3 For: 5908, Non: 2760, Pub: 2631           
-#> 4 Cit: 2812, Sub: 1750, Tow: 822, Rur: 501  
-#> 5 Lar: 2809, Sma: 887, Mid: 866, Dis: 508   
+#> 4 Cit: 2864, Sub: 1688, Tow: 788, Rur: 545  
+#> 5 Lar: 2807, Sma: 873, Mid: 872, Dis: 539   
 #> 6 Con: 1205, Not: 1015, Req: 273, Rec: 122  
 #> 7 Rom: 232, Uni: 85, Bap: 56, Pre: 54       
 #> 
 #> ── Variable type: logical ──────────────────────────────────────────────────────
 #>    skim_variable    n_missing complete_rate    mean count              
 #>  1 is_hbcu               5412         0.521 0.0168  FAL: 5789, TRU: 99 
-#>  2 is_pbi                5412         0.521 0.0105  FAL: 5826, TRU: 62 
-#>  3 is_annhi              5412         0.521 0.00272 FAL: 5872, TRU: 16 
+#>  2 is_pbi                5412         0.521 0.0109  FAL: 5824, TRU: 64 
+#>  3 is_annhi              5412         0.521 0.00306 FAL: 5870, TRU: 18 
 #>  4 is_tribal             5412         0.521 0.00594 FAL: 5853, TRU: 35 
-#>  5 is_aanapii            5412         0.521 0.0350  FAL: 5682, TRU: 206
-#>  6 is_hsi                5412         0.521 0.0909  FAL: 5353, TRU: 535
-#>  7 is_nanti              5412         0.521 0.00543 FAL: 5856, TRU: 32 
+#>  5 is_aanapii            5412         0.521 0.0352  FAL: 5681, TRU: 207
+#>  6 is_hsi                5412         0.521 0.0965  FAL: 5320, TRU: 568
+#>  7 is_nanti              5412         0.521 0.00611 FAL: 5852, TRU: 36 
 #>  8 is_only_men           5412         0.521 0.0102  FAL: 5828, TRU: 60 
 #>  9 is_only_women         5412         0.521 0.00510 FAL: 5858, TRU: 30 
 #> 10 is_only_distance      2832         0.749 0.00709 FAL: 8408, TRU: 60 
@@ -104,11 +105,11 @@ skimr::skim_tee(school)
 #> ── Variable type: numeric ──────────────────────────────────────────────────────
 #>   skim_variable n_missing complete_rate      mean         sd       p0      p25
 #> 1 id                    0         1     2550768.  8357052.   100654   182632. 
-#> 2 latitude           5412         0.521      37.3       5.87    -14.3     33.9
+#> 2 latitude           5412         0.521      37.3       5.88    -14.3     33.9
 #> 3 longitude          5412         0.521     -90.4      18.2    -171.     -97.5
 #>        p50      p75       p100 hist 
 #> 1 367422   455666.  49664501   ▇▁▁▁▁
-#> 2     38.6     41.2       71.3 ▁▁▆▇▁
+#> 2     38.6     41.3       71.3 ▁▁▆▇▁
 #> 3    -86.3    -78.9      171.  ▂▇▁▁▁
 ```
 
