@@ -1,11 +1,12 @@
 URL_COLLEGE_SCORECARD <- "https://collegescorecard.ed.gov/data/"
 
 cs_url_data_zip <- function() {
-	readLines(URL_COLLEGE_SCORECARD) |>
-		paste(collapse = "\n") |>
-		xml2::read_html() |>
-		xml2::xml_find_first("//*[contains(@href, 'Raw_Data')]") |>
-		xml2::xml_attr("href")
+	r <- rvest::read_html_live(URL_COLLEGE_SCORECARD)
+	withr::defer(r$session$close())
+
+	r |>
+		rvest::html_element('[href*="Raw_Data"]') |>
+		rvest::html_attr("href")
 }
 
 cs_data_raw_download <- function(url, output_dir = "data-raw") {
@@ -19,7 +20,10 @@ cs_data_raw_download <- function(url, output_dir = "data-raw") {
 	file
 }
 
-cs_data_raw_extract <- function(path_zip, output_dir = "data-raw/college-scorecard-raw") {
+cs_data_raw_extract <- function(
+	path_zip,
+	output_dir = "data-raw/college-scorecard-raw"
+) {
 	dir_create(output_dir)
 	zip::unzip(path_zip, exdir = output_dir)
 

@@ -19,6 +19,7 @@ Depends:
     targets
 Imports: 
     arrow,
+    chromote,
     cli,
     crew,
     dbplyr,
@@ -27,6 +28,7 @@ Imports:
     janitor,
     readr,
     readxl,
+    rvest,
     skimr,
     tarchetypes,
     tidyr,
