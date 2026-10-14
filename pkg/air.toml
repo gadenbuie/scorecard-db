@@ -1,0 +1,8 @@
+# Air formatter configuration for the collegeScorecard package.
+# Docs: https://posit-dev.github.io/air/config.html
+#
+# The rest of this repository (the targets pipeline in R/) uses tab
+# indentation, so the package uses tabs too.
+
+[format]
+indent-style = "tab"

@@ -1,5 +1,5 @@
 dd_read_institution_cohort_map <- function(
-	path = tar_read(path_data_raw_dictionary),
+	path = tar_read("path_data_dictionary"),
 	sheet = "Institution_Cohort_Map"
 ) {
 	path |>
@@ -25,7 +25,7 @@ dd_read_institution_cohort_map <- function(
 }
 
 dd_read_institution <- function(
-	path = tar_read(path_data_raw_dictionary),
+	path = tar_read("path_data_dictionary"),
 	sheet = "Institution_Data_Dictionary"
 ) {
 	data <-

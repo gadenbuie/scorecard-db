@@ -11,7 +11,7 @@ Provides a tidied subset of the US College Scorecard dataset, containing institu
 \section{Updated}{
 
 
-The data were last updated on \strong{April 23, 2025} from
+The data were last updated on \strong{October 14, 2026} from
 \url{https://collegescorecard.ed.gov/data/}. Please visit
 \url{https://github.com/gadenbuie/scorecard-db} for the code used to process
 and transform the released data into the tidy data sets available in this
@@ -29,6 +29,11 @@ Useful links:
 }
 \author{
 \strong{Maintainer}: Garrick Aden-Buie \email{garrick@adenbuie.com} (\href{https://orcid.org/0000-0002-7111-0077}{ORCID}) [copyright holder]
+
+Authors:
+\itemize{
+  \item Garrick Aden-Buie \email{garrick@adenbuie.com} (\href{https://orcid.org/0000-0002-7111-0077}{ORCID}) [copyright holder]
+}
 
 }
 \keyword{internal}
