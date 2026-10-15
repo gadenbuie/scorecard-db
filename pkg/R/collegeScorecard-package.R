@@ -1,6 +1,6 @@
 #' @section Updated:
 #'
-#' The data were last updated on **April 23, 2025** from
+#' The data were last updated on **October 14, 2026** from
 #' <https://collegescorecard.ed.gov/data/>. Please visit
 #' <https://github.com/gadenbuie/scorecard-db> for the code used to process
 #' and transform the released data into the tidy data sets available in this

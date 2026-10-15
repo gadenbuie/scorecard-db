@@ -5,7 +5,7 @@
 \alias{scorecard}
 \title{College Scorecard: Scorecard Data}
 \format{
-A data frame with 183,306 rows and 24 variables. Original column
+A data frame with 200,699 rows and 24 variables. Original column
 names from the source dataset are noted in parenthesis.
 
 \describe{

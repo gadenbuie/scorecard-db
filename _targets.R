@@ -28,6 +28,13 @@ list(
     cs_data_raw_download(url_data_zip, "data-raw"),
     format = "file"
   ),
+  # Newer releases don't include the data dictionary in the raw data zip
+  # (only data.yaml), so it's downloaded separately from its published URL.
+  tar_target(
+    "path_data_dictionary",
+    cs_data_raw_download(URL_DATA_DICTIONARY, "data-raw"),
+    format = "file"
+  ),
   tar_target(
     "path_data_raw",
     cs_data_raw_extract(path_data_zip),
@@ -43,15 +50,10 @@ list(
     cs_data_raw_ls_yaml(path_data_raw),
     format = "file"
   ),
-  tar_target(
-    "path_data_raw_dictionary",
-    cs_data_raw_ls_dictionary(path_data_raw),
-    format = "file"
-  ),
   # Data sets ----
   tar_target(
     "data_dictionary",
-    dd_read_institution(path_data_raw_dictionary),
+    dd_read_institution(path_data_dictionary),
     format = "rds"
   ),
   # Outputs ----

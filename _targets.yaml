@@ -1,2 +1,2 @@
 main:
-  reporter_make: verbose_positives
+  reporter_make: balanced
