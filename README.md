@@ -33,6 +33,14 @@ To update the data, invalidate the `url_data_zip` target –
 `targets::tar_invalidate("url_data_zip")` – and run
 `targets::tar_make()` again.
 
+Run the pipeline regression tests from the repository root with:
+
+``` bash
+Rscript tests/testthat.R
+```
+
+These tests use small local fixtures and do not download Scorecard data.
+
 ### Raw College Scorecard Data
 
 The raw College Scorecard data is available as a set of parquet files in
