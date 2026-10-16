@@ -15,29 +15,29 @@
 #' Historical data from the U.S. College Scorecard dataset. The data includes
 #' historical information on the number of students, costs of attendance and
 #' average net prices, median earnings after entry, rates of admission and
-#' completion, and ACT and
-#' SAT test scores.
+#' completion, and ACT and SAT test scores.
 #'
 #' Schools are included only if their most recent record has `OPEFLAG = 1`
 #' (participates in Title IV federal financial aid programs). Branch campuses
 #' with `OPEFLAG = 2`, deferment-only institutions, and nonparticipating
-#' institutions are excluded. Column names have been changed for readability
-#' and consistency.
+#' institutions are excluded. Column names have been changed for readability and
+#' consistency.
 #'
 #' `cost_avg` and `cost_avg_income_*` are average net prices, not costs of
 #' attendance. The `cost_attendance_*` columns report costs of attendance for
-#' academic-year and program-year institutions separately. `rate_completion`
-#' is the four-year institution completion rate within 100% of normal time;
+#' academic-year and program-year institutions separately. `rate_completion` is
+#' the four-year institution completion rate within 100% of normal time;
 #' `rate_completion_150_4yr` and `rate_completion_150_lt4yr` report completion
-#' within 150% of normal time for four-year and less-than-four-year institutions.
+#' within 150% of normal time for four-year and less-than-four-year
+#' institutions.
 #'
 #' The Most Recent Institution bulk file can draw different metrics from
 #' different academic years. A single `academic_year` in this dataset need not
 #' match every metric in that file.
 #'
 #' You can find the original data set at the U.S. Department of Education's
-#' [College Scorecard website](https://collegescorecard.ed.gov/data/). The
-#' code for the data transformation process is available at
+#' [College Scorecard website](https://collegescorecard.ed.gov/data/). The code
+#' for the data transformation process is available at
 #' <https://github.com/gadenbuie/scorecard-db>.
 #'
 #' @references <https://collegescorecard.ed.gov/data/>

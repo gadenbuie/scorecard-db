@@ -46,29 +46,29 @@ scorecard
 Historical data from the U.S. College Scorecard dataset. The data includes
 historical information on the number of students, costs of attendance and
 average net prices, median earnings after entry, rates of admission and
-completion, and ACT and
-SAT test scores.
+completion, and ACT and SAT test scores.
 
 Schools are included only if their most recent record has \code{OPEFLAG = 1}
 (participates in Title IV federal financial aid programs). Branch campuses
 with \code{OPEFLAG = 2}, deferment-only institutions, and nonparticipating
-institutions are excluded. Column names have been changed for readability
-and consistency.
+institutions are excluded. Column names have been changed for readability and
+consistency.
 
 \code{cost_avg} and \verb{cost_avg_income_*} are average net prices, not costs of
 attendance. The \verb{cost_attendance_*} columns report costs of attendance for
-academic-year and program-year institutions separately. \code{rate_completion}
-is the four-year institution completion rate within 100\% of normal time;
+academic-year and program-year institutions separately. \code{rate_completion} is
+the four-year institution completion rate within 100\% of normal time;
 \code{rate_completion_150_4yr} and \code{rate_completion_150_lt4yr} report completion
-within 150\% of normal time for four-year and less-than-four-year institutions.
+within 150\% of normal time for four-year and less-than-four-year
+institutions.
 
 The Most Recent Institution bulk file can draw different metrics from
 different academic years. A single \code{academic_year} in this dataset need not
 match every metric in that file.
 
 You can find the original data set at the U.S. Department of Education's
-\href{https://collegescorecard.ed.gov/data/}{College Scorecard website}. The
-code for the data transformation process is available at
+\href{https://collegescorecard.ed.gov/data/}{College Scorecard website}. The code
+for the data transformation process is available at
 \url{https://github.com/gadenbuie/scorecard-db}.
 }
 \references{

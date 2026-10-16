@@ -17,13 +17,11 @@ path_data_tidy_school|stem|1af0afce435ca02f|e90324671d465829|96fd48fb45511f04|18
 path_data_pkg_school|stem|921b9df367484092|4303a5ba07083c08|2455497fb8bb3435|1541609634|pkg/data/school.rda|t20740.903341748s|s325369b|325369|file|local|vector|||0.227||
 path_data_site_parquet|stem|6619507004483f4f|72f99707cdb92d70|601141ac33d2bac5|-1463404068|data/site/scorecard_used_on_site.parquet|t20742.6701585037s|s12447455b|12447455|file|local|vector|||21.944||
 path_data_site_csv|stem|7f1f8c36e7a33cb6|7781fe6a395dfb1e|e4c079afcff66c0c|366032231|data/site/scorecard_used_on_site.csv|t20742.6701659799s|s80749632b|80749632|file|local|vector|||0.558||
-path_data_site_sqlite|stem|9cfc82f758a7b6d3|f423897938d34a9a|fbb712be372c8bf4|1908068269|data/site/scorecard_used_on_site.db|t20742.6701815883s|s87093248b|87093248|file|local|vector|||1.606||
 path_data_site_rds|stem|89aa0a8d1f94a0b1|b2e01096d01ece4b|d6fdf3fe8ee9cbda|-2025288741|data/site/scorecard_used_on_site.rds|t20742.6702665397s|s18263351b|18263351|file|local|vector|||30.956||
 school_tidy|stem|11b2bf90ed965e59|fc305e52b39bcf54|623ed49bdd738860|366396326||t20742.6702889739s|s444333b|444333|rds|local|vector|||1.847||
 scorecard_tidy|stem|074ddfe25f3e8a78|fcf7ac32379ff230|247e382beca8a9c4|1107603213||t20742.6703070953s|s5334859b|5334859|rds|local|vector|||0.75||
 path_data_tidy_scorecard|stem|beac0e105b58f7e3|e8dded240a3586c7|72175e7543b57f2e|1476911287|data/tidy/scorecard.rds|t20742.670308565s|s44756990b|44756990|file|local|vector|||0.043||
 path_data_pkg_scorecard|stem|039ae54dbaf3bdde|6479a53e3ed430cd|25125b2e16fffbbd|-434225160|pkg/data/scorecard.rda|t20742.670372536s|s3394679b|3394679|file|local|vector|||5.575||
-path_data_pkg_docs|stem|0e2028a976417625|61b9ed2facb6a36b|d5cf2f2267162885|982306252||t20742.6720157265s|s154b|154|rds|local|vector|||13.749||
 global_duckdb|function|57cc64a74ae28688
 site_extra_vars|object|e09c10b3d8b374b6
 cs_data_raw_validate|function|35bdf5541143b830
@@ -34,7 +32,7 @@ out_full_info_parquet|function|184e2e508f1cfeff
 uncap|function|e8a1f56798ac22d5
 URL_COLLEGE_SCORECARD|object|e49ea303856f3cd3
 out_used_on_site_csv|function|63348b7b6d89969b
-out_used_on_site_sqlite|function|c4cdbf515f403a92
+out_used_on_site_sqlite|function|40ea5b0b3a447870
 dd_read_institution|function|bb13d9e33453bcb8
 out_tidy_school|function|26d45e261edee7c4
 out_tidy_scorecard|function|ff5a6d8efe9baa44
@@ -57,4 +55,6 @@ tidy_scorecard|function|e79d1650e870a6f9
 out_full_merged_parquet|function|f1e397a85f5f2690
 out_used_on_site_parquet|function|abc9aca69caa6995
 out_used_on_site_rds|function|2a21caa6b3d150d6
-path_data_pkg_docs_files|stem|e1f5663bef1a9160|bdf25212c840ff65|2c530c1562a7fbd1|-858485250|pkg/R*pkg/DESCRIPTION*pkg/README.Rmd|t20742.6728604542s|s3699b|3699|file|local|vector|||0.085||
+path_data_pkg_docs_files|stem|a7c580c579a02a69|bdf25212c840ff65|2c530c1562a7fbd1|-858485250|pkg/R*pkg/DESCRIPTION*pkg/README.Rmd|t20742.6979047657s|s11504b|11504|file|local|vector|||0.091||
+path_data_site_sqlite|stem|9cfc82f758a7b6d3|f423897938d34a9a|05c746c180e4c444|1908068269|data/site/scorecard_used_on_site.db|t20742.6981618243s|s87093248b|87093248|file|local|vector|||1.518||
+path_data_pkg_docs|stem|0e2028a976417625|61b9ed2facb6a36b|c6543089e6822b34|982306252||t20742.698323671s|s154b|154|rds|local|vector|||15.022||
