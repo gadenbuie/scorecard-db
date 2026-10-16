@@ -61,7 +61,7 @@ skimr::skim_tee(school_tidy)
     ── Data Summary ────────────────────────
                                Values
     Name                       data  
-    Number of rows             11300 
+    Number of rows             11465 
     Number of columns          25    
     _______________________          
     Column type frequency:           
@@ -74,52 +74,52 @@ skimr::skim_tee(school_tidy)
 
     ── Variable type: character ────────────────────────────────────────────────────
       skim_variable n_missing complete_rate min max empty n_unique whitespace
-    1 name                  0         1       3  93     0    10525          0
-    2 city                  0         1       3  23     0     2915          0
+    1 name                  0         1       3  93     0    10687          0
+    2 city                  0         1       3  23     0     2935          0
     3 state                 0         1       2   2     0       59          0
-    4 zip                   0         1       5  10     0     8757          0
-    5 url                4943         0.563  15 123     0     5435          0
+    4 zip                   0         1       5  10     0     8918          0
+    5 url                5332         0.535  15 136     0     5204          0
 
     ── Variable type: factor ───────────────────────────────────────────────────────
       skim_variable         n_missing complete_rate ordered n_unique
-    1 deg_predominant             998        0.912  FALSE          4
-    2 deg_highest                1193        0.894  FALSE          4
-    3 control                       1        1.00   FALSE          3
-    4 locale_type                5415        0.521  FALSE          4
-    5 locale_size                5415        0.521  FALSE          6
-    6 adm_req_test               8685        0.231  FALSE          4
-    7 religious_affiliation     10449        0.0753 FALSE         60
+    1 deg_predominant            1066        0.907  FALSE          4
+    2 deg_highest                1292        0.887  FALSE          4
+    3 control                       1        1.000  FALSE          3
+    4 locale_type                5860        0.489  FALSE          4
+    5 locale_size                5860        0.489  FALSE          6
+    6 adm_req_test              10744        0.0629 FALSE          4
+    7 religious_affiliation     10641        0.0719 FALSE         60
       top_counts                                
-    1 Cer: 5483, Bac: 2549, Ass: 1819, Gra: 451 
-    2 Cer: 4287, Gra: 2517, Ass: 2111, Bac: 1192
-    3 For: 5908, Non: 2760, Pub: 2631           
-    4 Cit: 2812, Sub: 1750, Tow: 822, Rur: 501  
-    5 Lar: 2809, Sma: 887, Mid: 866, Dis: 508   
-    6 Con: 1205, Not: 1015, Req: 273, Rec: 122  
-    7 Rom: 232, Uni: 85, Bap: 56, Pre: 54       
+    1 Cer: 5618, Bac: 2533, Ass: 1798, Gra: 450 
+    2 Cer: 4291, Gra: 2559, Ass: 2104, Bac: 1219
+    3 For: 6015, Non: 2799, Pub: 2650           
+    4 Cit: 2717, Sub: 1607, Tow: 757, Rur: 524  
+    5 Lar: 2665, Sma: 834, Mid: 825, Dis: 516   
+    6 Not: 406, Req: 153, Rec: 122, Con: 40     
+    7 Rom: 223, Uni: 83, Bap: 54, Pre: 50       
 
     ── Variable type: logical ──────────────────────────────────────────────────────
        skim_variable    n_missing complete_rate    mean count              
-     1 is_hbcu               5412         0.521 0.0168  FAL: 5789, TRU: 99 
-     2 is_pbi                5412         0.521 0.0105  FAL: 5826, TRU: 62 
-     3 is_annhi              5412         0.521 0.00272 FAL: 5872, TRU: 16 
-     4 is_tribal             5412         0.521 0.00594 FAL: 5853, TRU: 35 
-     5 is_aanapii            5412         0.521 0.0350  FAL: 5682, TRU: 206
-     6 is_hsi                5412         0.521 0.0909  FAL: 5353, TRU: 535
-     7 is_nanti              5412         0.521 0.00543 FAL: 5856, TRU: 32 
-     8 is_only_men           5412         0.521 0.0102  FAL: 5828, TRU: 60 
-     9 is_only_women         5412         0.521 0.00510 FAL: 5858, TRU: 30 
-    10 is_only_distance      2832         0.749 0.00709 FAL: 8408, TRU: 60 
+     1 is_hbcu               5789         0.495 0.0176  FAL: 5576, TRU: 100
+     2 is_pbi                5789         0.495 0.0115  FAL: 5611, TRU: 65 
+     3 is_annhi              5789         0.495 0.00300 FAL: 5659, TRU: 17 
+     4 is_tribal             5789         0.495 0.00617 FAL: 5641, TRU: 35 
+     5 is_aanapii            5789         0.495 0.0365  FAL: 5469, TRU: 207
+     6 is_hsi                5789         0.495 0.106   FAL: 5074, TRU: 602
+     7 is_nanti              5789         0.495 0.00599 FAL: 5642, TRU: 34 
+     8 is_only_men           5789         0.495 0.0106  FAL: 5616, TRU: 60 
+     9 is_only_women         5789         0.495 0.00529 FAL: 5646, TRU: 30 
+    10 is_only_distance      2900         0.747 0.00829 FAL: 8494, TRU: 71 
 
     ── Variable type: numeric ──────────────────────────────────────────────────────
       skim_variable n_missing complete_rate      mean         sd       p0      p25
-    1 id                    0         1     2550768.  8357052.   100654   182632. 
-    2 latitude           5412         0.521      37.3       5.87    -14.3     33.9
-    3 longitude          5412         0.521     -90.4      18.2    -171.     -97.5
+    1 id                    0         1     2698142.  8635097.   100654   183859  
+    2 latitude           5857         0.489      37.3       5.86    -14.3     33.9
+    3 longitude          5857         0.489     -90.4      18.2    -171.     -97.5
            p50      p75       p100 hist 
-    1 367422   455666.  49664501   ▇▁▁▁▁
+    1 372772   457679   49664501   ▇▁▁▁▁
     2     38.6     41.2       71.3 ▁▁▆▇▁
-    3    -86.3    -78.9      171.  ▂▇▁▁▁
+    3    -86.4    -78.9      171.  ▂▇▁▁▁
 
 ``` r
 scorecard_tidy <- targets::tar_read("scorecard_tidy")
@@ -129,68 +129,76 @@ skimr::skim_tee(scorecard_tidy)
     ── Data Summary ────────────────────────
                                Values
     Name                       data  
-    Number of rows             183306
-    Number of columns          23    
+    Number of rows             200699
+    Number of columns          28    
     _______________________          
     Column type frequency:           
       character                1     
-      logical                  2     
-      numeric                  20    
+      numeric                  27    
     ________________________         
     Group variables            None  
 
     ── Variable type: character ────────────────────────────────────────────────────
       skim_variable n_missing complete_rate min max empty n_unique whitespace
-    1 academic_year         0             1   7   7     0       27          0
-
-    ── Variable type: logical ──────────────────────────────────────────────────────
-      skim_variable    n_missing complete_rate mean count
-    1 cost_med_similar    183306             0  NaN ": " 
-    2 cost_med_overall    183306             0  NaN ": " 
+    1 academic_year         0             1   7   7     0       30          0
 
     ── Variable type: numeric ──────────────────────────────────────────────────────
-       skim_variable             n_missing complete_rate        mean          sd
-     1 id                                0       1       1163825.    5311085.   
-     2 n_undergrads                  20563       0.888      2285.       5101.   
-     3 cost_avg                     104675       0.429     15809.       8216.   
-     4 cost_avg_income_0_30k        105507       0.424     13996.       7669.   
-     5 cost_avg_income_30_48k       115448       0.370     14736.       7723.   
-     6 cost_avg_income_48_75k       120294       0.344     16807.       7750.   
-     7 cost_avg_income_75_110k      129900       0.291     19224.       7843.   
-     8 cost_avg_income_110k_plus    138593       0.244     21352.       9036.   
-     9 amnt_earnings_med_10y        143433       0.218     35228.      15046.   
-    10 rate_completion              134721       0.265         0.333       0.237
-    11 rate_admissions              181562       0.00951       0.722       0.221
-    12 score_act_p25                156788       0.145        20.2         3.69 
-    13 score_act_p50                182314       0.00541      24.5         4.56 
-    14 score_act_p75                156794       0.145        25.4         3.55 
-    15 score_sat_verbal_p25         156906       0.144       484.         72.3  
-    16 score_sat_verbal_p50         182311       0.00543     587.         71.6  
-    17 score_sat_verbal_p75         156905       0.144       592.         69.3  
-    18 score_sat_math_p25           156771       0.145       486.         75.7  
-    19 score_sat_math_p50           182311       0.00543     580.         78.8  
-    20 score_sat_math_p75           156773       0.145       594.         72.3  
-                 p0        p25        p50        p75     p100 hist 
-     1  100654      164562     213987     416670     49664501 ▇▁▁▁▁
-     2       0         117        490       2050       253594 ▇▁▁▁▁
-     3 -103168        9319      15281      21090.      112050 ▁▁▇▁▁
-     4 -117833        7952      13336      19036.      111962 ▁▁▇▂▁
-     5  -44508        8618.     14055      19740       113384 ▁▇▃▁▁
-     6  -17804       10711.     16289      21716       113427 ▂▇▁▁▁
-     7  -18045       13149.     18933      24285.      114298 ▁▇▁▁▁
-     8  -17487       14415      20448      26533       113314 ▁▇▁▁▁
-     9    8400       25400      32900      42000       250000 ▇▁▁▁▁
-    10       0           0.145      0.3        0.498        1 ▇▇▅▂▁
-    11       0.0106      0.612      0.773      0.889        1 ▁▁▂▆▇
-    12       1          18         20         22           35 ▁▁▇▃▁
-    13       5          21         24         27           35 ▁▁▇▆▃
-    14       2          23         25         27           36 ▁▁▂▇▂
-    15     100         440        480        520          799 ▁▁▇▃▁
-    16     380         540        580        630          760 ▁▅▇▅▂
-    17     100         540        590        630          800 ▁▁▂▇▂
-    18     100         440        475        520          799 ▁▁▇▃▁
-    19     310         530        570        620          800 ▁▂▇▃▁
-    20     100         550        588        630          800 ▁▁▂▇▂
+       skim_variable                 n_missing complete_rate        mean          sd
+     1 id                                    0         1     1274554.    5631724.   
+     2 n_undergrads                      28055         0.860    2316.       5205.   
+     3 cost_tuition_in                  100818         0.498   12800.      11530.   
+     4 cost_tuition_out                 103352         0.485   15347.      10940.   
+     5 cost_books                       103638         0.484    1112.        628.   
+     6 cost_room_board_on               149774         0.254    8268.       3558.   
+     7 cost_room_board_off              108735         0.458    8285.       3696.   
+     8 cost_attendance_academic_year    142598         0.289   25988.      14965.   
+     9 cost_attendance_program_year     165603         0.175   20680.       7708.   
+    10 cost_avg                         112476         0.440   16006.       8418.   
+    11 cost_avg_income_0_30k            113458         0.435   14123.       7844.   
+    12 cost_avg_income_30_48k           124364         0.380   14808.       7889.   
+    13 cost_avg_income_48_75k           129612         0.354   16847.       7896.   
+    14 cost_avg_income_75_110k          140130         0.302   19335.       8010.   
+    15 cost_avg_income_110k_plus        149652         0.254   21643.       9263.   
+    16 amnt_earnings_med_10y            161040         0.198   35245.      15056.   
+    17 rate_completion                  148362         0.261       0.338       0.237
+    18 rate_completion_150_4yr          140972         0.298       0.494       0.213
+    19 rate_completion_150_lt4yr        105143         0.476       0.555       0.264
+    20 rate_admissions                  139752         0.304       0.700       0.211
+    21 score_sat_avg                    169085         0.158    1083.        138.   
+    22 score_act_p25                    172362         0.141      20.3         3.82 
+    23 score_act_p75                    172368         0.141      25.6         3.63 
+    24 score_sat_verbal_p25             172407         0.141     489.         74.3  
+    25 score_sat_verbal_p75             172406         0.141     595.         70.2  
+    26 score_sat_math_p25               172273         0.142     489.         77.3  
+    27 score_sat_math_p75               172275         0.142     597.         73.3  
+            p0        p25        p50        p75     p100 hist 
+     1  100654 165033     214795     418560     49664501 ▇▁▁▁▁
+     2       0    118        498       2073       253594 ▇▁▁▁▁
+     3       0   4170       9685      17148        74787 ▇▂▁▁▁
+     4       0   7610      12544      19356.       74787 ▇▃▁▁▁
+     5       0    800       1020       1386        28000 ▇▁▁▁▁
+     6       0   5600       7811      10446        34336 ▆▇▁▁▁
+     7       0   5840       7662.     10110       106962 ▇▁▁▁▁
+     8    3368  14189      22551      32786        96375 ▇▆▂▁▁
+     9       0  15560.     19882.     24758.      120377 ▇▃▁▁▁
+    10 -103168   9415      15419      21310.      115636 ▁▁▇▁▁
+    11 -117833   7992      13418      19180       115636 ▁▁▇▂▁
+    12  -44508   8609      14085      19815       113384 ▁▇▃▁▁
+    13  -17804  10683      16278      21788.      113427 ▂▇▁▁▁
+    14  -18045  13169      18986      24421       114298 ▁▇▁▁▁
+    15  -17487  14571      20674      26828.      113314 ▁▇▁▁▁
+    16    8400  25500      32900      42000       250000 ▇▁▁▁▁
+    17       0      0.150      0.308      0.5          1 ▇▇▅▃▁
+    18       0      0.346      0.491      0.639        1 ▂▆▇▅▂
+    19       0      0.326      0.593      0.765        1 ▃▅▆▇▆
+    20       0      0.572      0.729      0.858        1 ▁▂▅▇▇
+    21     514    990       1064       1155         1599 ▁▂▇▂▁
+    22       1     18         20         22           35 ▁▁▇▃▁
+    23       2     23         25         28           36 ▁▁▂▇▂
+    24     100    440        480        530          799 ▁▁▇▃▁
+    25     100    550        590        640          800 ▁▁▂▇▂
+    26     100    440        480        530          799 ▁▁▇▃▁
+    27     100    550        590        640          800 ▁▁▂▇▂
 
 For ease of use, the variables in `school_tidy` and `scorecard_tidy`
 have been renamed from the original names. I don’t yet have a mapping

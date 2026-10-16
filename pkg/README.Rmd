@@ -63,7 +63,8 @@ skimr::skim_tee(scorecard)
 ## Interpreting costs, completion, and coverage
 
 - `cost_avg` and `cost_avg_income_*` are average **net prices**, not costs of attendance. They use the private-institution value when available and otherwise the public-institution value.
-- `rate_completion` (`C100_4`) measures completion within 100% of normal time at four-year institutions for first-time, full-time students.
+- `cost_attendance_academic_year` (`COSTT4_A`) and `cost_attendance_program_year` (`COSTT4_P`) report average costs of attendance for academic-year and program-year institutions, respectively.
+- `rate_completion` (`C100_4`) measures completion within 100% of normal time at four-year institutions. `rate_completion_150_4yr` (`C150_4`) and `rate_completion_150_lt4yr` (`C150_L4`) measure completion within 150% of normal time at four-year and less-than-four-year institutions. These rates describe first-time, full-time students.
 - Only institutions whose most recent record has `OPEFLAG = 1` (Title IV participants) are included. Branch campuses with `OPEFLAG = 2`, deferment-only institutions, and nonparticipating institutions are excluded from both datasets.
 - The Most Recent Institution bulk file can use different academic years for different metrics. It is not equivalent to selecting one `academic_year` from `scorecard`.
 

@@ -134,6 +134,8 @@ tidy_scorecard <- function(
 			cost_books = cost_booksupply,
 			cost_room_board_on = cost_roomboard_on,
 			cost_room_board_off = cost_roomboard_off,
+			cost_attendance_academic_year = cost_costt4_a,
+			cost_attendance_program_year = cost_costt4_p,
 			cost_avg = coalesce(cost_npt4_priv, cost_npt4_pub),
 			cost_avg_income_0_30k = coalesce(cost_npt41_priv, cost_npt41_pub),
 			cost_avg_income_30_48k = coalesce(cost_npt42_priv, cost_npt42_pub),
@@ -156,6 +158,8 @@ tidy_scorecard <- function(
 			# Completion ----
 			# Completion rate for first-time, full-time students at four-year institutions (100% of expected time to completion)
 			rate_completion = completion_c100_4,
+			rate_completion_150_4yr = completion_c150_4,
+			rate_completion_150_lt4yr = completion_c150_l4,
 			## These columns appear to be completely missing across all academic years
 			# # Median completion rate amongst insitutions with the same predominant degree category
 			# rate_completion_med_similar = completion_mdcomp_pd,

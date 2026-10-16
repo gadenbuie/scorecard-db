@@ -13,9 +13,10 @@
 #'
 #' @description
 #' Historical data from the U.S. College Scorecard dataset. The data includes
-#' historical information on the number of students, average net prices, median
-#' earnings after entry, rates of admission and completion, and ACT and SAT
-#' test scores.
+#' historical information on the number of students, costs of attendance and
+#' average net prices, median earnings after entry, rates of admission and
+#' completion, and ACT and
+#' SAT test scores.
 #'
 #' Schools are included only if their most recent record has `OPEFLAG = 1`
 #' (participates in Title IV federal financial aid programs). Branch campuses
@@ -24,8 +25,11 @@
 #' and consistency.
 #'
 #' `cost_avg` and `cost_avg_income_*` are average net prices, not costs of
-#' attendance. `rate_completion` is the four-year institution completion rate
-#' within 100% of normal time.
+#' attendance. The `cost_attendance_*` columns report costs of attendance for
+#' academic-year and program-year institutions separately. `rate_completion`
+#' is the four-year institution completion rate within 100% of normal time;
+#' `rate_completion_150_4yr` and `rate_completion_150_lt4yr` report completion
+#' within 150% of normal time for four-year and less-than-four-year institutions.
 #'
 #' The Most Recent Institution bulk file can draw different metrics from
 #' different academic years. A single `academic_year` in this dataset need not
@@ -176,6 +180,8 @@
 		cost_books = "BOOKSUPPLY",
 		cost_room_board_on = "ROOMBOARD_ON",
 		cost_room_board_off = "ROOMBOARD_OFF",
+		cost_attendance_academic_year = "COSTT4_A",
+		cost_attendance_program_year = "COSTT4_P",
 		cost_avg = "Average net price for Title IV institutions (public, private nonprofit, and private for-profit). Uses the private value when available, otherwise the public value. (`NPT4_PRIV`, `NPT4_PUB`)",
 		cost_avg_income_0_30k = "Average net price for $0-$30,000 family income (public and private institutions). Uses the private value when available, otherwise the public value. (`NPT41_PRIV`, `NPT41_PUB`)",
 		cost_avg_income_30_48k = "Average net price for $30,001-$48,000 family income (public and private institutions). Uses the private value when available, otherwise the public value. (`NPT42_PRIV`, `NPT42_PUB`)",
@@ -184,6 +190,8 @@
 		cost_avg_income_110k_plus = "Average net price for $110,000+ family income (public and private institutions). Uses the private value when available, otherwise the public value. (`NPT45_PRIV`, `NPT45_PUB`)",
 		amnt_earnings_med_10y = "MD_EARN_WNE_P10",
 		rate_completion = "C100_4",
+		rate_completion_150_4yr = "C150_4",
+		rate_completion_150_lt4yr = "C150_L4",
 		rate_admissions = "ADM_RATE_ALL",
 		score_sat_avg = "SAT_AVG",
 		score_act_p25 = "ACTCM25",

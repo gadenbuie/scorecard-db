@@ -5,7 +5,7 @@
 \alias{scorecard}
 \title{College Scorecard: Scorecard Data}
 \format{
-A data frame with 200,699 rows and 24 variables. Original column
+A data frame with 200,699 rows and 28 variables. Original column
 names from the source dataset are noted in parenthesis.
 
 \describe{
@@ -17,6 +17,8 @@ names from the source dataset are noted in parenthesis.
 \item{\code{cost_books}}{\verb{[numeric]} Cost of attendance: estimated books and supplies. (\code{BOOKSUPPLY})}
 \item{\code{cost_room_board_on}}{\verb{[numeric]} Cost of attendance: on-campus room and board. (\code{ROOMBOARD_ON})}
 \item{\code{cost_room_board_off}}{\verb{[numeric]} Cost of attendance: off-campus room and board. (\code{ROOMBOARD_OFF})}
+\item{\code{cost_attendance_academic_year}}{\verb{[numeric]} Average cost of attendance (academic year institutions). (\code{COSTT4_A})}
+\item{\code{cost_attendance_program_year}}{\verb{[numeric]} Average cost of attendance (program-year institutions). (\code{COSTT4_P})}
 \item{\code{cost_avg}}{\verb{[numeric]} Average net price for Title IV institutions (public, private nonprofit, and private for-profit). Uses the private value when available, otherwise the public value. (\code{NPT4_PRIV}, \code{NPT4_PUB})}
 \item{\code{cost_avg_income_0_30k}}{\verb{[numeric]} Average net price for $0-$30,000 family income (public and private institutions). Uses the private value when available, otherwise the public value. (\code{NPT41_PRIV}, \code{NPT41_PUB})}
 \item{\code{cost_avg_income_30_48k}}{\verb{[numeric]} Average net price for $30,001-$48,000 family income (public and private institutions). Uses the private value when available, otherwise the public value. (\code{NPT42_PRIV}, \code{NPT42_PUB})}
@@ -25,6 +27,8 @@ names from the source dataset are noted in parenthesis.
 \item{\code{cost_avg_income_110k_plus}}{\verb{[numeric]} Average net price for $110,000+ family income (public and private institutions). Uses the private value when available, otherwise the public value. (\code{NPT45_PRIV}, \code{NPT45_PUB})}
 \item{\code{amnt_earnings_med_10y}}{\verb{[numeric]} Median earnings of students working and not enrolled 10 years after entry. (\code{MD_EARN_WNE_P10})}
 \item{\code{rate_completion}}{\verb{[numeric]} Completion rate for first-time, full-time students at four-year institutions (100\% of expected time to completion). (\code{C100_4})}
+\item{\code{rate_completion_150_4yr}}{\verb{[numeric]} Completion rate for first-time, full-time students at four-year institutions (150\% of expected time to completion). (\code{C150_4})}
+\item{\code{rate_completion_150_lt4yr}}{\verb{[numeric]} Completion rate for first-time, full-time students at less-than-four-year institutions (150\% of expected time to completion). (\code{C150_L4})}
 \item{\code{rate_admissions}}{\verb{[numeric]} Admission rate for all campuses rolled up to the 6-digit OPE ID. (\code{ADM_RATE_ALL})}
 \item{\code{score_sat_avg}}{\verb{[numeric]} Average SAT equivalent score of students admitted. (\code{SAT_AVG})}
 \item{\code{score_act_p25}}{\verb{[numeric]} 25th percentile of the ACT cumulative score. (\code{ACTCM25})}
@@ -40,9 +44,10 @@ scorecard
 }
 \description{
 Historical data from the U.S. College Scorecard dataset. The data includes
-historical information on the number of students, average net prices, median
-earnings after entry, rates of admission and completion, and ACT and SAT
-test scores.
+historical information on the number of students, costs of attendance and
+average net prices, median earnings after entry, rates of admission and
+completion, and ACT and
+SAT test scores.
 
 Schools are included only if their most recent record has \code{OPEFLAG = 1}
 (participates in Title IV federal financial aid programs). Branch campuses
@@ -51,8 +56,11 @@ institutions are excluded. Column names have been changed for readability
 and consistency.
 
 \code{cost_avg} and \verb{cost_avg_income_*} are average net prices, not costs of
-attendance. \code{rate_completion} is the four-year institution completion rate
-within 100\% of normal time.
+attendance. The \verb{cost_attendance_*} columns report costs of attendance for
+academic-year and program-year institutions separately. \code{rate_completion}
+is the four-year institution completion rate within 100\% of normal time;
+\code{rate_completion_150_4yr} and \code{rate_completion_150_lt4yr} report completion
+within 150\% of normal time for four-year and less-than-four-year institutions.
 
 The Most Recent Institution bulk file can draw different metrics from
 different academic years. A single \code{academic_year} in this dataset need not
