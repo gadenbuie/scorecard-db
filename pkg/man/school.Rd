@@ -40,14 +40,16 @@ from the source dataset are noted in parenthesis.
 school
 }
 \description{
-Information about institutions in the U.S. College Scorecard dataset. The
+Information about institutions in the U.S. College Scorecard dataset. This
 uses the most recent report for each institution. The \code{school} dataset can be
 used to filter the \code{scorecard} dataset. Join the two datasets using the \code{id}
 column.
 
-The data set contain only colleges that participate in Title IV federal
-financial aid programs. In the tidy data set, column names have been changed
-for readability and consistency.
+Schools are included only if their most recent record has \code{OPEFLAG = 1}
+(participates in Title IV federal financial aid programs). Branch campuses
+with \code{OPEFLAG = 2}, deferment-only institutions, and nonparticipating
+institutions are excluded. Column names have been changed for readability
+and consistency.
 
 You can find the original data set at the U.S. Department of Education's
 \href{https://collegescorecard.ed.gov/data/}{College Scorecard website}. The

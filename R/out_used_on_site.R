@@ -1,13 +1,17 @@
 site_extra_vars <- c(
-  "ZIP",
-  "LATITUDE",
-  "LONGITUDE",
-  "C100_4",
+	"ZIP",
+	"LATITUDE",
+	"LONGITUDE",
+	"C100_4",
+	"C150_4",
+	"C150_L4",
+	"COSTT4_A",
+	"COSTT4_P",
 	"SAT_AVG",
 	"ADM_RATE_ALL",
-  "ACTCM50",
-  "SATVR50",
-  "SATMT50",
+	"ACTCM50",
+	"SATVR50",
+	"SATMT50",
 	"TUITIONFEE_IN",
 	"TUITIONFEE_OUT",
 	"BOOKSUPPLY",
@@ -53,7 +57,9 @@ out_used_on_site_sqlite <- function(
 
 	con <- duckdb::dbConnect(duckdb::duckdb())
 	withr::defer(DBI::dbDisconnect(con))
-	if (file_exists(output_file)) file_delete(output_file)
+	if (file_exists(output_file)) {
+		file_delete(output_file)
+	}
 
 	db_execute <- function(con, query) {
 		cli::cli_verbatim(query)
@@ -68,9 +74,24 @@ out_used_on_site_sqlite <- function(
 	db_execute(con, "INSTALL SQLITE;")
 	db_execute(con, "LOAD SQLITE;")
 	db_execute(con, glue("ATTACH '{output_file}' AS sqlite_db (TYPE SQLITE);"))
-	db_execute(con, glue("CREATE TABLE sqlite_db.scorecard as (SELECT * FROM read_parquet('{path_data_site_parquet}'));"))
-	db_execute(con, glue("CREATE TABLE sqlite_db.info as (SELECT * FROM read_parquet('{path_data_full_info}'));"))
-	db_execute(con, glue("CREATE TABLE sqlite_db.labels as (SELECT * FROM read_parquet('{path_data_full_labels}'));"))
+	db_execute(
+		con,
+		glue(
+			"CREATE TABLE sqlite_db.scorecard as (SELECT * FROM read_parquet('{path_data_site_parquet}'));"
+		)
+	)
+	db_execute(
+		con,
+		glue(
+			"CREATE TABLE sqlite_db.info as (SELECT * FROM read_parquet('{path_data_full_info}'));"
+		)
+	)
+	db_execute(
+		con,
+		glue(
+			"CREATE TABLE sqlite_db.labels as (SELECT * FROM read_parquet('{path_data_full_labels}'));"
+		)
+	)
 
 	output_file
 }
@@ -127,8 +148,12 @@ out_used_on_site_rds <- function(
 	for (var in labelled_vars) {
 		merged_keep[[var]] <- factor(
 			merged_keep[[var]],
-			levels = labels |> dplyr::filter(variable_name == var) |> dplyr::pull(value),
-			labels = labels |> dplyr::filter(variable_name == var) |> dplyr::pull(label)
+			levels = labels |>
+				dplyr::filter(variable_name == var) |>
+				dplyr::pull(value),
+			labels = labels |>
+				dplyr::filter(variable_name == var) |>
+				dplyr::pull(label)
 		)
 	}
 

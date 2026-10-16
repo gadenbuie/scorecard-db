@@ -24,7 +24,6 @@ out_full_merged_parquet <- function(
 		cli::cli_progress_done()
 	}
 
-
 	output_dir
 }
 
@@ -33,9 +32,16 @@ duckdb_load_merged_csv <- function(file, con = global_duckdb()) {
 	academic_year <- gsub("_", "-", academic_year)
 	cli::cli_progress_step("{.field {academic_year}}: reading csv")
 
-	q_read <- glue("CREATE OR REPLACE TABLE merged AS SELECT * FROM read_csv('{file}', nullstr = ['NA', 'NULL', '', 'PS']);")
+	q_read <- glue(
+		"CREATE OR REPLACE TABLE merged AS SELECT * FROM read_csv('{file}', nullstr = ['NA', 'NULL', '', 'PS']);"
+	)
 	DBI::dbExecute(con, q_read)
-	DBI::dbExecute(con, glue("ALTER TABLE merged ADD COLUMN ACADEMIC_YEAR VARCHAR DEFAULT '{academic_year}';"))
+	DBI::dbExecute(
+		con,
+		glue(
+			"ALTER TABLE merged ADD COLUMN ACADEMIC_YEAR VARCHAR DEFAULT '{academic_year}';"
+		)
+	)
 
 	academic_year
 }

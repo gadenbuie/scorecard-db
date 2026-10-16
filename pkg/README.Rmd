@@ -16,6 +16,7 @@ knitr::opts_chunk$set(
 # collegeScorecard
 
 <!-- badges: start -->
+[![R-CMD-check](https://github.com/gadenbuie/scorecard-db/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/gadenbuie/scorecard-db/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 collegeScorecard provides a tidied subset of the [US College Scorecard dataset](https://collegescorecard.ed.gov/data/), containing institutional characteristics, enrollment, student aid, costs, and student outcomes at institutions of higher education in the United States.
@@ -59,6 +60,14 @@ skimr::skim_tee(school)
 ```{r}
 skimr::skim_tee(scorecard)
 ```
+
+## Interpreting costs, completion, and coverage
+
+- `cost_avg` and `cost_avg_income_*` are average **net prices**, not costs of attendance. They use the private-institution value when available and otherwise the public-institution value.
+- `cost_attendance_academic_year` (`COSTT4_A`) and `cost_attendance_program_year` (`COSTT4_P`) report average costs of attendance for academic-year and program-year institutions, respectively.
+- `rate_completion` (`C100_4`) measures completion within 100% of normal time at four-year institutions. `rate_completion_150_4yr` (`C150_4`) and `rate_completion_150_lt4yr` (`C150_L4`) measure completion within 150% of normal time at four-year and less-than-four-year institutions. These rates describe first-time, full-time students.
+- Only institutions whose most recent record has `OPEFLAG = 1` (Title IV participants) are included. Branch campuses with `OPEFLAG = 2`, deferment-only institutions, and nonparticipating institutions are excluded from both datasets.
+- The Most Recent Institution bulk file can use different academic years for different metrics. It is not equivalent to selecting one `academic_year` from `scorecard`.
 
 The help documentation of each dataset provides a short description of each column and the source of the data.
 Additional information is included in the packaged data dictionary.

@@ -38,7 +38,10 @@ cs_data_raw_extract <- function(
 	# __MACOSX folder that macOS users add to the zip.
 	zip_dirs <- strsplit(zip_files, "/", fixed = TRUE)
 	nested <- zip_dirs[lengths(zip_dirs) > 1]
-	release_dirs <- setdiff(unique(vapply(nested, `[[`, character(1), 1)), "__MACOSX")
+	release_dirs <- setdiff(
+		unique(vapply(nested, `[[`, character(1), 1)),
+		"__MACOSX"
+	)
 
 	# Always extract into a fresh directory so that files left over from a
 	# previous release can never be picked up by the targets below.
@@ -65,7 +68,11 @@ cs_data_raw_extract <- function(
 
 cs_data_raw_validate <- function(path_data_raw, zip_files) {
 	if (!dir_exists(path_data_raw)) {
-		stop("Expected the extracted College Scorecard release in ", path_data_raw, ".")
+		stop(
+			"Expected the extracted College Scorecard release in ",
+			path_data_raw,
+			"."
+		)
 	}
 
 	# Every MERGED data file in the zip must be present in the extracted
@@ -76,8 +83,13 @@ cs_data_raw_validate <- function(path_data_raw, zip_files) {
 
 	if (length(merged_files) != merged_in_zip) {
 		stop(
-			"Expected ", merged_in_zip, " MERGED data files in ", path_data_raw,
-			" but found ", length(merged_files), "."
+			"Expected ",
+			merged_in_zip,
+			" MERGED data files in ",
+			path_data_raw,
+			" but found ",
+			length(merged_files),
+			"."
 		)
 	}
 

@@ -14,22 +14,27 @@ tidy_school <- function(path_data_site_rds = tar_read("path_data_site_rds")) {
 	scorecard_site <- readr::read_rds(path_data_site_rds)
 	school_vars <- tidy_school_vars(scorecard_site)
 
-  degrees <- c("Certificate", "Associate", "Bachelor", "Graduate")
+	degrees <- c("Certificate", "Associate", "Bachelor", "Graduate")
 
 	school <-
 		scorecard_site |>
 		slice_max(academic_year, n = 1, by = unitid) |>
 		select(academic_year, unitid, all_of(school_vars)) |>
-		filter(opeflag == "Participates in Title IV federal financial aid programs") |>
+		filter(
+			opeflag == "Participates in Title IV federal financial aid programs"
+		) |>
 		tidyr::extract(
 			locale,
 			into = c("locale_type", "locale_size"),
 			regex = "(\\w+): (\\w+) .+"
 		) |>
 		mutate(
-	    across(unitid, as.integer),
-	    locale_type = factor(locale_type, c("City", "Suburb", "Town", "Rural")),
-			locale_size = factor(locale_size, c("Large", "Midsize", "Small", "Fringe", "Distant", "Remote")),
+			across(unitid, as.integer),
+			locale_type = factor(locale_type, c("City", "Suburb", "Town", "Rural")),
+			locale_size = factor(
+				locale_size,
+				c("Large", "Midsize", "Small", "Fringe", "Distant", "Remote")
+			),
 			control = recode(
 				control,
 				"Public" = "Public",
@@ -58,7 +63,17 @@ tidy_school <- function(path_data_site_rds = tar_read("path_data_site_rds")) {
 				insturl
 			),
 			across(
-				c("hbcu", "pbi", "annhi", "tribal", "aanapii", "hsi", "nanti", "menonly", "womenonly"),
+				c(
+					"hbcu",
+					"pbi",
+					"annhi",
+					"tribal",
+					"aanapii",
+					"hsi",
+					"nanti",
+					"menonly",
+					"womenonly"
+				),
 				\(x) x == "Yes"
 			),
 			across(
@@ -120,7 +135,13 @@ tidy_scorecard <- function(
 
 	scorecard_site |>
 		select(-all_of(school_vars)) |>
-		select(unitid, starts_with("student"), starts_with("admissions"), starts_with("cost"), everything()) |>
+		select(
+			unitid,
+			starts_with("student"),
+			starts_with("admissions"),
+			starts_with("cost"),
+			everything()
+		) |>
 		# Keep only Title IV participating schools
 		semi_join(school_tidy, by = join_by(unitid == id)) |>
 		transmute(
@@ -134,6 +155,8 @@ tidy_scorecard <- function(
 			cost_books = cost_booksupply,
 			cost_room_board_on = cost_roomboard_on,
 			cost_room_board_off = cost_roomboard_off,
+			cost_attendance_academic_year = cost_costt4_a,
+			cost_attendance_program_year = cost_costt4_p,
 			cost_avg = coalesce(cost_npt4_priv, cost_npt4_pub),
 			cost_avg_income_0_30k = coalesce(cost_npt41_priv, cost_npt41_pub),
 			cost_avg_income_30_48k = coalesce(cost_npt42_priv, cost_npt42_pub),
@@ -156,6 +179,8 @@ tidy_scorecard <- function(
 			# Completion ----
 			# Completion rate for first-time, full-time students at four-year institutions (100% of expected time to completion)
 			rate_completion = completion_c100_4,
+			rate_completion_150_4yr = completion_c150_4,
+			rate_completion_150_lt4yr = completion_c150_l4,
 			## These columns appear to be completely missing across all academic years
 			# # Median completion rate amongst insitutions with the same predominant degree category
 			# rate_completion_med_similar = completion_mdcomp_pd,

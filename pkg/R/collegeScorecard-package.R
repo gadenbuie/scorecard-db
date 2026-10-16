@@ -13,17 +13,31 @@
 #'
 #' @description
 #' Historical data from the U.S. College Scorecard dataset. The data includes
-#' historical information on the number of students, average cost, median
-#' earnings after graduations, rates of admission and completion, and ACT and
-#' SAT test scores.
+#' historical information on the number of students, costs of attendance and
+#' average net prices, median earnings after entry, rates of admission and
+#' completion, and ACT and SAT test scores.
 #'
-#' The data set contain only colleges that participate in Title IV federal
-#' financial aid programs. In the tidy data set, column names have been changed
-#' for readability and consistency.
+#' Schools are included only if their most recent record has `OPEFLAG = 1`
+#' (participates in Title IV federal financial aid programs). Branch campuses
+#' with `OPEFLAG = 2`, deferment-only institutions, and nonparticipating
+#' institutions are excluded. Column names have been changed for readability and
+#' consistency.
+#'
+#' `cost_avg` and `cost_avg_income_*` are average net prices, not costs of
+#' attendance. The `cost_attendance_*` columns report costs of attendance for
+#' academic-year and program-year institutions separately. `rate_completion` is
+#' the four-year institution completion rate within 100% of normal time;
+#' `rate_completion_150_4yr` and `rate_completion_150_lt4yr` report completion
+#' within 150% of normal time for four-year and less-than-four-year
+#' institutions.
+#'
+#' The Most Recent Institution bulk file can draw different metrics from
+#' different academic years. A single `academic_year` in this dataset need not
+#' match every metric in that file.
 #'
 #' You can find the original data set at the U.S. Department of Education's
-#' [College Scorecard website](https://collegescorecard.ed.gov/data/). The
-#' code for the data transformation process is available at
+#' [College Scorecard website](https://collegescorecard.ed.gov/data/). The code
+#' for the data transformation process is available at
 #' <https://github.com/gadenbuie/scorecard-db>.
 #'
 #' @references <https://collegescorecard.ed.gov/data/>
@@ -37,14 +51,16 @@
 #' College Scorecard: School Data
 #'
 #' @description
-#' Information about institutions in the U.S. College Scorecard dataset. The
+#' Information about institutions in the U.S. College Scorecard dataset. This
 #' uses the most recent report for each institution. The `school` dataset can be
 #' used to filter the `scorecard` dataset. Join the two datasets using the `id`
 #' column.
 #'
-#' The data set contain only colleges that participate in Title IV federal
-#' financial aid programs. In the tidy data set, column names have been changed
-#' for readability and consistency.
+#' Schools are included only if their most recent record has `OPEFLAG = 1`
+#' (participates in Title IV federal financial aid programs). Branch campuses
+#' with `OPEFLAG = 2`, deferment-only institutions, and nonparticipating
+#' institutions are excluded. Column names have been changed for readability
+#' and consistency.
 #'
 #' You can find the original data set at the U.S. Department of Education's
 #' [College Scorecard website](https://collegescorecard.ed.gov/data/). The
@@ -164,14 +180,18 @@
 		cost_books = "BOOKSUPPLY",
 		cost_room_board_on = "ROOMBOARD_ON",
 		cost_room_board_off = "ROOMBOARD_OFF",
-		cost_avg = "NPT4_PRIV",
-		cost_avg_income_0_30k = "NPT41_PRIV",
-		cost_avg_income_30_48k = "NPT42_PRIV",
-		cost_avg_income_48_75k = "NPT43_PRIV",
-		cost_avg_income_75_110k = "NPT44_PRIV",
-		cost_avg_income_110k_plus = "NPT45_PRIV",
+		cost_attendance_academic_year = "COSTT4_A",
+		cost_attendance_program_year = "COSTT4_P",
+		cost_avg = "Average net price for Title IV institutions (public, private nonprofit, and private for-profit). Uses the private value when available, otherwise the public value. (`NPT4_PRIV`, `NPT4_PUB`)",
+		cost_avg_income_0_30k = "Average net price for $0-$30,000 family income (public and private institutions). Uses the private value when available, otherwise the public value. (`NPT41_PRIV`, `NPT41_PUB`)",
+		cost_avg_income_30_48k = "Average net price for $30,001-$48,000 family income (public and private institutions). Uses the private value when available, otherwise the public value. (`NPT42_PRIV`, `NPT42_PUB`)",
+		cost_avg_income_48_75k = "Average net price for $48,001-$75,000 family income (public and private institutions). Uses the private value when available, otherwise the public value. (`NPT43_PRIV`, `NPT43_PUB`)",
+		cost_avg_income_75_110k = "Average net price for $75,001-$110,000 family income (public and private institutions). Uses the private value when available, otherwise the public value. (`NPT44_PRIV`, `NPT44_PUB`)",
+		cost_avg_income_110k_plus = "Average net price for $110,000+ family income (public and private institutions). Uses the private value when available, otherwise the public value. (`NPT45_PRIV`, `NPT45_PUB`)",
 		amnt_earnings_med_10y = "MD_EARN_WNE_P10",
 		rate_completion = "C100_4",
+		rate_completion_150_4yr = "C150_4",
+		rate_completion_150_lt4yr = "C150_L4",
 		rate_admissions = "ADM_RATE_ALL",
 		score_sat_avg = "SAT_AVG",
 		score_act_p25 = "ACTCM25",
