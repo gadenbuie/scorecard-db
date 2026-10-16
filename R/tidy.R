@@ -14,22 +14,27 @@ tidy_school <- function(path_data_site_rds = tar_read("path_data_site_rds")) {
 	scorecard_site <- readr::read_rds(path_data_site_rds)
 	school_vars <- tidy_school_vars(scorecard_site)
 
-  degrees <- c("Certificate", "Associate", "Bachelor", "Graduate")
+	degrees <- c("Certificate", "Associate", "Bachelor", "Graduate")
 
 	school <-
 		scorecard_site |>
 		slice_max(academic_year, n = 1, by = unitid) |>
 		select(academic_year, unitid, all_of(school_vars)) |>
-		filter(opeflag == "Participates in Title IV federal financial aid programs") |>
+		filter(
+			opeflag == "Participates in Title IV federal financial aid programs"
+		) |>
 		tidyr::extract(
 			locale,
 			into = c("locale_type", "locale_size"),
 			regex = "(\\w+): (\\w+) .+"
 		) |>
 		mutate(
-	    across(unitid, as.integer),
-	    locale_type = factor(locale_type, c("City", "Suburb", "Town", "Rural")),
-			locale_size = factor(locale_size, c("Large", "Midsize", "Small", "Fringe", "Distant", "Remote")),
+			across(unitid, as.integer),
+			locale_type = factor(locale_type, c("City", "Suburb", "Town", "Rural")),
+			locale_size = factor(
+				locale_size,
+				c("Large", "Midsize", "Small", "Fringe", "Distant", "Remote")
+			),
 			control = recode(
 				control,
 				"Public" = "Public",
@@ -58,7 +63,17 @@ tidy_school <- function(path_data_site_rds = tar_read("path_data_site_rds")) {
 				insturl
 			),
 			across(
-				c("hbcu", "pbi", "annhi", "tribal", "aanapii", "hsi", "nanti", "menonly", "womenonly"),
+				c(
+					"hbcu",
+					"pbi",
+					"annhi",
+					"tribal",
+					"aanapii",
+					"hsi",
+					"nanti",
+					"menonly",
+					"womenonly"
+				),
 				\(x) x == "Yes"
 			),
 			across(
@@ -120,7 +135,13 @@ tidy_scorecard <- function(
 
 	scorecard_site |>
 		select(-all_of(school_vars)) |>
-		select(unitid, starts_with("student"), starts_with("admissions"), starts_with("cost"), everything()) |>
+		select(
+			unitid,
+			starts_with("student"),
+			starts_with("admissions"),
+			starts_with("cost"),
+			everything()
+		) |>
 		# Keep only Title IV participating schools
 		semi_join(school_tidy, by = join_by(unitid == id)) |>
 		transmute(
