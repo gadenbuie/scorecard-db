@@ -182,6 +182,21 @@ skimr::skim_tee(scorecard)
 #> 23     100    550        590        640          800 ▁▁▂▇▂
 ```
 
+## Interpreting costs, completion, and coverage
+
+- `cost_avg` and `cost_avg_income_*` are average **net prices**, not
+  costs of attendance. They use the private-institution value when
+  available and otherwise the public-institution value.
+- `rate_completion` (`C100_4`) measures completion within 100% of normal
+  time at four-year institutions for first-time, full-time students.
+- Only institutions whose most recent record has `OPEFLAG = 1` (Title IV
+  participants) are included. Branch campuses with `OPEFLAG = 2`,
+  deferment-only institutions, and nonparticipating institutions are
+  excluded from both datasets.
+- The Most Recent Institution bulk file can use different academic years
+  for different metrics. It is not equivalent to selecting one
+  `academic_year` from `scorecard`.
+
 The help documentation of each dataset provides a short description of
 each column and the source of the data. Additional information is
 included in the packaged data dictionary.

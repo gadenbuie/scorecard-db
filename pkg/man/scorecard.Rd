@@ -17,12 +17,12 @@ names from the source dataset are noted in parenthesis.
 \item{\code{cost_books}}{\verb{[numeric]} Cost of attendance: estimated books and supplies. (\code{BOOKSUPPLY})}
 \item{\code{cost_room_board_on}}{\verb{[numeric]} Cost of attendance: on-campus room and board. (\code{ROOMBOARD_ON})}
 \item{\code{cost_room_board_off}}{\verb{[numeric]} Cost of attendance: off-campus room and board. (\code{ROOMBOARD_OFF})}
-\item{\code{cost_avg}}{\verb{[numeric]} Average net price for Title IV institutions (private for-profit and nonprofit institutions). (\code{NPT4_PRIV})}
-\item{\code{cost_avg_income_0_30k}}{\verb{[numeric]} Average net price for $0-$30,000 family income (private for-profit and nonprofit institutions). (\code{NPT41_PRIV})}
-\item{\code{cost_avg_income_30_48k}}{\verb{[numeric]} Average net price for $30,001-$48,000 family income (private for-profit and nonprofit institutions). (\code{NPT42_PRIV})}
-\item{\code{cost_avg_income_48_75k}}{\verb{[numeric]} Average net price for $48,001-$75,000 family income (private for-profit and nonprofit institutions). (\code{NPT43_PRIV})}
-\item{\code{cost_avg_income_75_110k}}{\verb{[numeric]} Average net price for $75,001-$110,000 family income (private for-profit and nonprofit institutions). (\code{NPT44_PRIV})}
-\item{\code{cost_avg_income_110k_plus}}{\verb{[numeric]} Average net price for $110,000+ family income (private for-profit and nonprofit institutions). (\code{NPT45_PRIV})}
+\item{\code{cost_avg}}{\verb{[numeric]} Average net price for Title IV institutions (public, private nonprofit, and private for-profit). Uses the private value when available, otherwise the public value. (\code{NPT4_PRIV}, \code{NPT4_PUB})}
+\item{\code{cost_avg_income_0_30k}}{\verb{[numeric]} Average net price for $0-$30,000 family income (public and private institutions). Uses the private value when available, otherwise the public value. (\code{NPT41_PRIV}, \code{NPT41_PUB})}
+\item{\code{cost_avg_income_30_48k}}{\verb{[numeric]} Average net price for $30,001-$48,000 family income (public and private institutions). Uses the private value when available, otherwise the public value. (\code{NPT42_PRIV}, \code{NPT42_PUB})}
+\item{\code{cost_avg_income_48_75k}}{\verb{[numeric]} Average net price for $48,001-$75,000 family income (public and private institutions). Uses the private value when available, otherwise the public value. (\code{NPT43_PRIV}, \code{NPT43_PUB})}
+\item{\code{cost_avg_income_75_110k}}{\verb{[numeric]} Average net price for $75,001-$110,000 family income (public and private institutions). Uses the private value when available, otherwise the public value. (\code{NPT44_PRIV}, \code{NPT44_PUB})}
+\item{\code{cost_avg_income_110k_plus}}{\verb{[numeric]} Average net price for $110,000+ family income (public and private institutions). Uses the private value when available, otherwise the public value. (\code{NPT45_PRIV}, \code{NPT45_PUB})}
 \item{\code{amnt_earnings_med_10y}}{\verb{[numeric]} Median earnings of students working and not enrolled 10 years after entry. (\code{MD_EARN_WNE_P10})}
 \item{\code{rate_completion}}{\verb{[numeric]} Completion rate for first-time, full-time students at four-year institutions (100\% of expected time to completion). (\code{C100_4})}
 \item{\code{rate_admissions}}{\verb{[numeric]} Admission rate for all campuses rolled up to the 6-digit OPE ID. (\code{ADM_RATE_ALL})}
@@ -40,13 +40,23 @@ scorecard
 }
 \description{
 Historical data from the U.S. College Scorecard dataset. The data includes
-historical information on the number of students, average cost, median
-earnings after graduations, rates of admission and completion, and ACT and
-SAT test scores.
+historical information on the number of students, average net prices, median
+earnings after entry, rates of admission and completion, and ACT and SAT
+test scores.
 
-The data set contain only colleges that participate in Title IV federal
-financial aid programs. In the tidy data set, column names have been changed
-for readability and consistency.
+Schools are included only if their most recent record has \code{OPEFLAG = 1}
+(participates in Title IV federal financial aid programs). Branch campuses
+with \code{OPEFLAG = 2}, deferment-only institutions, and nonparticipating
+institutions are excluded. Column names have been changed for readability
+and consistency.
+
+\code{cost_avg} and \verb{cost_avg_income_*} are average net prices, not costs of
+attendance. \code{rate_completion} is the four-year institution completion rate
+within 100\% of normal time.
+
+The Most Recent Institution bulk file can draw different metrics from
+different academic years. A single \code{academic_year} in this dataset need not
+match every metric in that file.
 
 You can find the original data set at the U.S. Department of Education's
 \href{https://collegescorecard.ed.gov/data/}{College Scorecard website}. The
