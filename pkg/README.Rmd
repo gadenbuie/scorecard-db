@@ -16,6 +16,7 @@ knitr::opts_chunk$set(
 # collegeScorecard
 
 <!-- badges: start -->
+[![R-CMD-check](https://github.com/gadenbuie/scorecard-db/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/gadenbuie/scorecard-db/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 collegeScorecard provides a tidied subset of the [US College Scorecard dataset](https://collegescorecard.ed.gov/data/), containing institutional characteristics, enrollment, student aid, costs, and student outcomes at institutions of higher education in the United States.

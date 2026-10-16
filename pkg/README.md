@@ -5,6 +5,7 @@
 
 <!-- badges: start -->
 
+[![R-CMD-check](https://github.com/gadenbuie/scorecard-db/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/gadenbuie/scorecard-db/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 collegeScorecard provides a tidied subset of the [US College Scorecard
